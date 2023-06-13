@@ -1,0 +1,48 @@
+ul.kt-sticky-toolbar(style='margin-top: 30px;')
+  li#kt_sticky_toolbar_chat_toggler.kt-sticky-toolbar__item.kt-sticky-toolbar__item--danger(data-toggle='kt-tooltip' title='Chatbot' data-placement='left' style="width: 40px;")
+    a(href='#' data-toggle='modal' data-target='#kt_chat_modal')
+      i.flaticon2-chat-1
+
+#kt_chat_modal.modal.fade-.modal-sticky-bottom-right(role='dialog' data-backdrop='false')
+  .modal-dialog(role='document')
+    .modal-content
+      .kt-chat
+        .kt-portlet.kt-portlet--last
+          .kt-portlet__head
+            .kt-chat__head
+              .kt-chat__left
+                .kt-chat__label
+                  a.kt-chat__title(href='#') Oslo the Wise
+                  span.kt-chat__status
+                    span.kt-badge.kt-badge--dot.kt-badge--success
+                    |  Active
+              .kt-chat__right
+                .dropdown.dropdown-inline
+                  button.btn.btn-clean.btn-sm.btn-icon(type='button' onclick = "chatbotoslo()")
+                    i.flaticon-arrows
+                button.btn.btn-clean.btn-sm.btn-icon(type='button' data-dismiss='modal')
+                  i.flaticon2-cross
+          .kt-portlet__body
+            .kt-scroll.kt-scroll--pull(data-height='410' data-mobile-height='225')
+              .kt-chat__messages.kt-chat__messages--solid
+          .kt-portlet__foot
+            .kt-chat__input
+              .kt-chat__editor
+                textarea(placeholder='Type here...' style='height: 50px')
+              .kt-chat__toolbar
+                .kt_chat__tools
+                  a(href='#')
+                    i.flaticon2-link
+                  a(href='#')
+                    i.flaticon2-photograph
+                  a(href='#')
+                    i.flaticon2-photo-camera
+                .kt_chat__actions
+                  button.btn.btn-brand.btn-md.btn-font-sm.btn-upper.btn-bold.kt-chat__reply(type='button') reply
+
+
+#kt_footer.kt-footer.kt-grid__item.kt-grid.kt-grid--desktop.kt-grid--ver-desktop
+            .kt-container.kt-container--fluid
+              .kt-footer__copyright
+                | 2022&nbsp;&copy;&nbsp;
+                a.kt-link(href="#" target="_blank") Requin solution

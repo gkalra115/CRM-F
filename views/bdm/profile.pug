@@ -1,0 +1,293 @@
+doctype html
+html(lang="en")
+  include ./partials/head.pug
+  body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading
+    // begin:: Page
+    // begin:: Header Mobile
+    #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+      .kt-header-mobile__logo
+        a(href="index.html")
+          img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+      .kt-header-mobile__toolbar
+        button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+          span
+        button#kt_header_mobile_toggler.kt-header-mobile__toggler
+          span
+        button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+          i.flaticon-more
+    // end:: Header Mobile
+    .kt-grid.kt-grid--hor.kt-grid--root
+      .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+        include ./partials/sidenav.pug
+        #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+          // begin:: Header
+          include ./partials/topnav.pug
+          #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+            // begin:: Content Head
+            include ./partials/header.pug
+            .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid
+              // Begin::Dashboard 3
+              // Begin::Row
+              #alertforaccount
+              .row
+                .col-xl-12
+                  // begin:: Widgets/Applications/User/Profile3
+                  .kt-portlet.kt-portlet--height-fluid
+                    .kt-portlet__body
+                      .kt-widget.kt-widget--user-profile-3
+                        .kt-widget__top
+                          .kt-widget__pic.kt-widget__pic--danger.kt-font-danger.kt-font-boldest.kt-font-light#empnameinitials
+                          .kt-widget__content
+                            .kt-widget__head
+                              a.kt-widget__username#empname(href='#')
+                              //- .kt-widget__action
+                              //-   button.btn.btn-label-success.btn-sm.btn-upper(type='button') ask
+                              //-   button.btn.btn-brand.btn-sm.btn-upper(type='button') hire
+                            .kt-widget__subhead
+                              a(href='#')#expertemail
+                              a(href='#')#expertphone
+                              a(href='#')#expertdesignation
+                              a(href='#')#joiningdate
+                                
+                            //- .kt-widget__info
+                            //-   .form-group.row
+                            //-     label.col-9.col-form-label Show desktop notification
+                            //-     .col-3
+                            //-       span.kt-switch.kt-switch--icon
+                            //-         label
+                            //-           input(type='checkbox', checked='checked', name='')
+                            //-           span
+
+                              //- .kt-widget__desc
+                              //-   | I distinguish three main text objektive could be merely to inform people.
+                              //-   br
+                              //-   |  A second could be persuade people.You want people to bay objective
+                              //- .kt-widget__progress
+                              //-   .kt-widget__text
+                              //-     | Progress
+                              //-   .progress(style='height: 5px;width: 100%;')
+                              //-     .progress-bar.kt-bg-success(role='progressbar', style='width: 65%;', aria-valuenow='65', aria-valuemin='0', aria-valuemax='100')
+                              //-   .kt-widget__stats
+                              //-     | 78%
+                        .kt-widget__bottom
+                          .kt-widget__item
+                            .kt-widget__icon
+                              i.flaticon2-open-text-book
+                            .kt-widget__details
+                              span.kt-widget__title Account Details
+                              a.kt-widget__value.kt-font-brand#viewaccount(href='#') View
+                          .kt-widget__item
+                            .kt-widget__icon
+                              i.flaticon-lock
+                            .kt-widget__details
+                              span.kt-widget__title Change password
+                              a.kt-widget__value.kt-font-brand#changepassword(href='#') View
+                          //- .kt-widget__item
+                          //-   .kt-widget__icon
+                          //-     i.flaticon-network
+                          //-   .kt-widget__details
+                          //-     .kt-section__content.kt-section__content--solid
+                          //-       .kt-media-group
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='John Myer')
+                          //-           img(src='/assets/media/users/100_1.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Alison Brandy')
+                          //-           img(src='/assets/media/users/100_10.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Selina Cranson')
+                          //-           img(src='/assets/media/users/100_11.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Luke Walls')
+                          //-           img(src='/assets/media/users/100_2.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Micheal York')
+                          //-           img(src='/assets/media/users/100_3.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Micheal York')
+                          //-           span +3
+              .row#accountdetailportlet
+                .col-lg-12
+                  // begin::Portlet
+                  .kt-portlet.kt-portlet--head.kt-portlet--mobile
+                    .kt-portlet__head
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Account 
+                          small Bank Account details
+                    .kt-portlet__body
+                      form#ex-account-form.kt-form.kt-form--label-right
+                        .kt-portlet__body
+                          .form-group.form-group-last
+                            .alert.alert-secondary(role='alert')
+                              .alert-icon
+                                i.flaticon-warning.kt-font-brand
+                              .alert-text
+                                | Please Check your details twice 
+                                code because it will only effect you.
+                          .form-group.row
+                            label.col-2.col-form-label(for='accountNumber') Account number
+                            .col-10
+                              input.form-control.accountnumber(type='text' name='accountNumber')
+                          .form-group.row
+                            label.col-2.col-form-label(for='holderName') Holder Name
+                            .col-10
+                              input.form-control.accholdername(type='text' name='holderName')
+                          .form-group.row
+                            label.col-2.col-form-label(for='bank') Select Bank
+                            .col-10
+                              select#kt_select2_1.form-control.kt-select2.getteam(name='bank' style="width:100%")
+                          .form-group.row
+                            label.col-2.col-form-label(for='ifsc') IFSC
+                            .col-10
+                              input.form-control.ifsccodehere(type='text' name='ifsc')
+                              #bankverification
+                        .kt-portlet__foot
+                          .kt-form__actions
+                            .row
+                              .col-2
+                              .col-10
+                                button.btn.btn-success#submitaccountdetails(type='button') Update
+                                button.btn.btn-secondary#closeaccountportlet(type='button') Close
+              .row#psswordchangeportlet
+                .col-lg-12
+                  // begin::Portlet
+                  .kt-portlet.kt-portlet--head.kt-portlet--mobile
+                    .kt-portlet__head
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Change Password 
+                    .kt-portlet__body
+                      form#ex-change-password.kt-form.kt-form--label-right
+                        .kt-portlet__body
+                          .form-group.row
+                            label.col-2.col-form-label(for='oldPassword') Old Password
+                            .col-10
+                              input.form-control.old_passcode(type='password' name='oldPassword')
+                          .form-group.row
+                            label.col-2.col-form-label(for='newPassword') New Password
+                            .col-10
+                              input#newPassword.form-control.new_passcode(type='password' name='newPassword')
+                          .form-group.row
+                            label.col-2.col-form-label(for='confirmPassword') Confirm Password
+                            .col-10
+                              input.form-control.confirm_passcode(type='password' name='confirmPassword')
+                        .kt-portlet__foot
+                          .kt-form__actions
+                            .row
+                              .col-2
+                              .col-10
+                                button.btn.btn-success#updatepasswordchange(type='button') Update
+                                button.btn.btn-secondary#closepasswordportlet(type='button') Close     
+                      #errormessagepassword             
+          include ./partials/footer.pug
+    // begin::Quick Panel
+    #kt_quick_panel.kt-quick-panel
+      a#kt_quick_panel_close_btn.kt-quick-panel__close(href='#')
+        i.flaticon2-delete
+      .kt-portlet.kt-portlet--height-fluid(style='padding: 2rem 0 0;')
+        .kt-portlet__body.kt-portlet__body--fit
+          // begin::Widget
+          .kt-widget.kt-widget--project-1
+            .kt-widget__head
+              .kt-widget__label
+                .kt-widget__media
+                  span.kt-media.kt-media--lg.kt-media--circle
+                    img(src='/assets/media/project-logos/3.png', alt='image')
+                .kt-widget__info.kt-margin-t-5
+                  a#kt-widget__title.kt-widget__title Nexa - Next generation SAAS
+                  span#kt-widget__desc.kt-widget__desc Creates Limitless possibilities
+              .kt-portlet__head-toolbar
+                a.btn.btn-clean.btn-sm.btn-icon.btn-icon-md(href='#', data-toggle='dropdown', aria-expanded='false')
+                  i.flaticon-more-1
+                .dropdown-menu.dropdown-menu-fit.dropdown-menu-right
+                  ul.kt-nav
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-line-chart
+                        span.kt-nav__link-text Reports
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-send
+                        span.kt-nav__link-text Messages
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-pie-chart-1
+                        span.kt-nav__link-text Charts
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-avatar
+                        span.kt-nav__link-text Members
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-settings
+                        span.kt-nav__link-text Settings
+            .kt-widget__body
+              .kt-widget__stats
+                .kt-widget__item
+                  span.kt-widget__date Status
+                  #kt-widget__label_status.kt-widget__label
+                    span.btn.btn-label-brand.btn-sm.btn-bold.btn-upper 07 may, 18
+                .kt-widget__item
+                  span.kt-widget__date Phone
+                  .kt-widget__label
+                    span#kt-widget__label_phone.btn.btn-label-danger.btn-sm.btn-bold.btn-upper 07 0ct, 18
+              span.kt-widget__text
+                | I distinguish three main text objecttives.First, your objective could
+                | be merely to inform people.A second be to persuade people.
+              .kt-widget__content
+                .kt-widget__details
+                  span.kt-widget__subtitle Salary
+                  span#kt-widget__subtitle_salary.kt-widget__value
+                    span 
+                    | 249,500
+                .kt-widget__details
+                  span.kt-widget__subtitle Joining Date
+                  span#kt-widget__subtitle_jDate.kt-widget__value
+                    span $
+                    | 76,810
+            .kt-widget__footer
+              .kt-widget__wrapper
+                .kt-widget__section
+                  .kt-widget__blog
+                    i.flaticon2-list-1
+                    a.kt-widget__value.kt-font-brand(href='#') 72 Tasks
+                  .kt-widget__blog
+                    i.flaticon2-talk
+                    a.kt-widget__value.kt-font-brand(href='#') 648 Comments
+                .kt-widget__section
+                  button.btn.btn-brand.btn-sm.btn-upper.btn-bold(type='button') details
+          // end::Widget
+    // end::Quick Panel
+    #kt_scrolltop.kt-scrolltop
+      i.fa.fa-arrow-up
+    script.
+      var KTAppOptions = {
+      "colors": {
+      "state": {
+      "brand": "#5d78ff",
+      "dark": "#282a3c",
+      "light": "#ffffff",
+      "primary": "#5867dd",
+      "success": "#34bfa3",
+      "info": "#36a3f7",
+      "warning": "#ffb822",
+      "danger": "#fd3995"
+      },
+      "base": {
+      "label": [
+      "#c5cbe3",
+      "#a1a8c3",
+      "#3d4465",
+      "#3e4466"
+      ],
+      "shape": [
+      "#f0f3ff",
+      "#d9dffa",
+      "#afb4d4",
+      "#646c9a"
+      ]
+      }
+      }
+      };
+    // end::Global Config
+    // begin::Global Theme Bundle(used by all pages)
+    script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+    script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+    script(src="/assets/js/pages/crud/forms/widgets/select2.js" type="text/javascript")
+    script(src="/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript")
+    script(src="/rpanel/js/bdm/profile.js")

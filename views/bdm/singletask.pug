@@ -1,0 +1,267 @@
+doctype html
+html(lang="en")
+  include ./partials/head.pug
+  link(rel="stylesheet" href="/assets/css/pages/error/error-5.css")
+  body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading.overlayloader
+    // begin:: Page
+    // begin:: Header Mobile
+    #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+      .kt-header-mobile__logo
+        a(href="index.html")
+          img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+      .kt-header-mobile__toolbar
+        button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+          span
+        button#kt_header_mobile_toggler.kt-header-mobile__toggler
+          span
+        button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+          i.flaticon-more
+    // end:: Header Mobile
+    .kt-grid.kt-grid--hor.kt-grid--root
+      .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+        include ./partials/sidenav.pug
+        #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+          // begin:: Header
+          include ./partials/topnav.pug
+          #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+            // begin:: Content Head
+            include ./partials/header.pug
+            .kt-grid.kt-grid--ver.kt-grid--root#errortask(style="margin-top:-20%; display:none;")
+              .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-error-v5(style='background-image: url(/assets/media/error/bg5.jpg);')
+                .kt-error_container
+                  span.kt-error_title
+                    h1 Oops!
+                  p.kt-error_subtitle
+                    | Something went wrong here.
+                  p.kt-error_description
+                    | There is no such task available
+            .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid#task_portlet(style="display:none")
+              // begin:: Portlet
+              .kt-portlet
+                .kt-portlet__body
+                  .kt-widget.kt-widget--user-profile-3
+                    .kt-widget__top
+                      .kt-widget__content
+                        .kt-widget__head
+                          a.kt-widget__title#tasktitle(href='#')
+                          a.btn.btn-outline-brand.btn-bold.btn-sm.dropdown-toggle(href='#', data-toggle='dropdown')
+                            | Actions
+                          .dropdown-menu.dropdown-menu-fit.dropdown-menu-right
+                            ul.kt-nav
+                              li.kt-nav__head
+                                | Task Actions
+                              li.kt-nav__separator
+                              li.kt-nav__item
+                                a.kt-nav__link(data-toggle='modal' data-target='#kt_modal_6')
+                                  i.kt-nav__link-icon.flaticon-piggy-bank
+                                  span.kt-nav__link-text Payment
+                              li.kt-nav__item
+                                      a.kt-nav__link(data-toggle='modal' onclick='delivertask()')
+                                        i.kt-nav__link-icon.flaticon-clipboard
+                                        span.kt-nav__link-text Delivered
+                              li.kt-nav__separator
+                              li.kt-nav__foot
+                                a.btn.btn-label-danger.btn-bold.btn-sm#deletetask Delete
+                                a.btn.btn-clean.btn-bold.btn-sm(data-toggle='modal' data-target='#kt_modal_4' onclick="editTaskFill()") Edit
+                              // end::Nav
+                        .kt-widget__subhead
+                          a(href='#')#taskkey
+                          a(href='#')#wordcount
+                          a(href='#')#timestampscreated
+                          a(href='#')#timestampsmodified
+                          
+                            //.kt-widget__item
+                              span.kt-widget__date
+                                | Status
+                              .kt-widget__label
+                                span.btn.btn-label-brand.btn-sm.btn-bold.btn-upper#taskstatus
+                        .kt-widget__info
+                          .kt-widget__desc#taskdesc.col-md-7.kt-scroll(data-scroll="true" style="text-align:justify; display:inline-block;")
+                        
+                    .kt-widget__bottom
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-piggy-bank
+                        .kt-widget__details
+                          span.kt-widget__title Amount
+                          span.kt-widget__value
+                            span#budgettask
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-confetti
+                        .kt-widget__details
+                          span.kt-widget__title Paid
+                          span.kt-widget__value
+                            span#paidamount
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-chat-1
+                        .kt-widget__details
+                          span.kt-widget__title Client
+                          a.kt-widget__value.kt-font-brand(href='#')#clientname
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-file-2
+                        .kt-widget__details
+                          span.kt-widget__title Created by
+                          a.kt-widget__value.kt-font-brand(href='#')#createdby
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-file-2
+                        .kt-widget__details
+                          span.kt-widget__title Status
+                          span.kt-widget__value
+                            span#taskstatus
+                      .kt-widget__item
+                        .kt-widget__details
+                          span.kt-widget__title Soft Delivery
+                          .kt-widget__label
+                            span.btn.btn-label-brand.btn-sm.btn-bold.btn-upper#softdeadline
+                      .kt-widget__item
+                        .kt-widget__details
+                          span.kt-widget__title Hard Delivery
+                          .kt-widget__label
+                            span.btn.btn-label-danger.btn-sm.btn-bold.btn-upper#harddeadline
+              // end:: Portlet
+              .row#milestonepanel(style="display:none;")
+                .col-lg-12.col-xl-12.col-md-12.col-sm-12
+                  // begin:: Widgets/Trends
+                  .kt-portlet
+                    .kt-portlet__head.kt-portlet__head--noborder
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Milestones
+                      .kt-portlet__head-toolbar
+                        button.btn.btn-clean.btn-sm.btn-icon.btn-icon-lg#closemilestone(type='button')
+                          i.flaticon.flaticon-cancel
+                    .kt-portlet__body
+                      .kt-section
+                        .kt-section__content
+                          button.btn.btn-brand(type='button') Milestone 1
+                          button.btn.btn-brand(type='button') Milestone 1
+                          button.btn.btn-brand(type='button') Milestone 1
+                          button.btn.btn-brand(type='button') Milestone 1
+              .row
+                .col-lg-12
+                  .kt-portlet.kt-margin-top-30#fileupload_portlet
+                    .kt-portlet__head
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Assessment Brief
+                    // begin::Form
+                    .kt-form
+                      .kt-portlet__body
+                        form(class='fileuploadform' enctype='multipart/form-data' role='form')
+                          .form-group
+                            label File Browser
+                            div
+                            .custom-file
+                              input.custom-file-input(type='file' name='files[]' id='files')
+                              label.custom-file-label(for='customFile') Choose file
+                            span.form-text.text-muted Max file size is 50MB and max number of files is 5.
+                          .kt-form__actions
+                            button.btn.btn-primary(type='submit', id='submit', name='submit') Submit
+                      .kt-portlet__foot(data-scroll="true" data-height="250")
+                        .kt-widget4#briefupload
+                    // end::Form
+                
+          include ./partials/footer.pug
+          // begin::Modal
+          #kt_modal_4.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+            .modal-dialog.modal-lg(role='document')
+              .modal-content
+                .modal-header
+                  h5#modalTitle.modal-title Add a Task
+                  button.close(type='button' data-dismiss='modal' aria-label='Close')
+                .modal-body
+                  form#createTask
+                    .form-group
+                      label.form-control-label(for='email') Title:
+                      input#title.form-control(type='text' name="title")
+                    .form-group
+                      label.form-control-label(for='email') Wordcount:
+                      input#wordcount.form-control(type='number' name="wordcount")
+                    .form-group
+                      label.form-control-label(for='jDate') Soft Deadline:
+                      input#softdeadline.form-control.empjoindate(type='date' name="softdeadline")
+                    .form-group
+                      label.form-control-label(for='jDate') Hard Deadline:
+                      input#harddeadline.form-control.empjoindate(type='date' name="harddeadline")        
+                    .form-group
+                      label Description
+                      .summernote#textdescription
+                    .form-group
+                      label Client
+                      select#selectclient.custom-select.form-control(name= "selectclient")
+                        option(selected='') Select client
+                .modal-footer
+                  button.btn.btn-secondary(type='button' data-dismiss='modal' ) Close
+                  button#actionButton.btn.btn-primary(type='button' onclick="createTask()") Create
+          // end::Modal
+          #kt_modal_6.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+            .modal-dialog.modal-lg(role='document')
+              .modal-content
+                .modal-header
+                  h5#modalTitle.modal-title Payment status
+                  button.close(type='button' data-dismiss='modal' aria-label='Close')
+                .modal-body
+                  form
+                  span#taskAssignId(style="display:none")
+                  .form-group
+                    label.form-control-label(for='softDate') Task Amount:
+                    input#taskamount.form-control(type='number')
+                  .form-group
+                    label.form-control-label(for='softDate') Paid Amount:
+                    input#totalpaidamount.form-control(type='number')
+                  .form-group
+                    label(style="display:block") Currency:
+                    select#selectcurrency.form-control.kt-selectpicker(style="width:100%")
+                      option(value="AUD") AUD
+                      option(value="CAD") CAD
+                      option(value="GBP") GBP
+                      option(value="INR") INR
+                      option(value="NZD") NZD
+                      option(value="USD") USD
+                .modal-footer
+                  button#closeAssign1.btn.btn-secondary(type='button' data-dismiss='modal' ) Close
+                  button#actionButton.btn.btn-primary(type='button' onclick="paymentstatus()") Create
+          
+    #kt_scrolltop.kt-scrolltop
+      i.fa.fa-arrow-up
+    script.
+      var KTAppOptions = {
+      "colors": {
+      "state": {
+      "brand": "#5d78ff",
+      "dark": "#282a3c",
+      "light": "#ffffff",
+      "primary": "#5867dd",
+      "success": "#34bfa3",
+      "info": "#36a3f7",
+      "warning": "#ffb822",
+      "danger": "#fd3995"
+      },
+      "base": {
+      "label": [
+      "#c5cbe3",
+      "#a1a8c3",
+      "#3d4465",
+      "#3e4466"
+      ],
+      "shape": [
+      "#f0f3ff",
+      "#d9dffa",
+      "#afb4d4",
+      "#646c9a"
+      ]
+      }
+      }
+      };
+    // end::Global Config
+    // begin::Global Theme Bundle(used by all pages)
+    script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+    script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+    script(src="/assets/js/pages/crud/file-upload/dropzonejs.js" type="text/javascript")
+    script(src="/assets/js/pages/custom/chat/chat.js" type="text/javascript")
+    script(src="/assets/js/pages/dashboard.js" type="text/javascript")
+    script(src="/rpanel/js/bdm/singletask.js")

@@ -1,0 +1,7 @@
+div #editablecontent{
+    border: thin dashed black
+}
+
+#editablecontent div[type=text]:focus{
+    outline: 1px solid orange;     /* oranges! yey */
+  }

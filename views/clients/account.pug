@@ -1,0 +1,233 @@
+doctype html
+html(dir='ltr', lang='en-US')
+  include ./partials/head.pug
+  body.stretched
+    #wrapper.clearfix
+      include ./partials/topnav.pug      
+      section#content
+        .content-wrap
+          .container.clearfix
+            .row.clearfix
+              .col-md-12
+                .heading-block.border-0
+                  h3 #{name}
+                  span #{userid}
+                .clear
+                .row.clearfix
+                  .col-lg-12
+                    #tabs-profile.tabs.tabs-alt.clearfix
+                      ul.tab-nav.clearfix
+                        li
+                          a(href='#tab-feeds')
+                            i.icon-rss2
+                            |  Tokens
+                        //li
+                          a(href='#tab-posts')
+                            i.icon-pencil2
+                            |  Billing
+                        //li
+                          a(href='#tab-replies')
+                            i.icon-reply
+                            |  Recharge
+                        //li
+                          a(href='#tab-connections')
+                            i.icon-users
+                            |  Settings
+                      .tab-container
+                        #tab-feeds.tab-content.clearfix
+                          .col-lg-12.bottommargin-sm
+                            //.white-section
+                              .row
+                                .col-md-6
+                                  label(for='') Get Past days activities
+                                  input.form-control.text-start.component-datepicker.past-enabled(type='date' value='' placeholder='MM/DD/YYYY')
+                                .col-md-6
+                                  a.button.button-border.button-rounded.button-aqua#generatecontet(type="button" onclick="answerquestion()" style="MArgin-top:5%;")
+                                    i.icon-line-edit-3
+                                    | Get activities
+                          p#tokencount
+                          //table.table.table-bordered.table-striped
+                            thead
+                              tr
+                                th Time
+                                th Activity
+                            tbody
+                              tr
+                                td
+                                  code 5/23/2021
+                                td 154 token consumed
+                              tr
+                                td
+                                  code 5/23/2021
+                                td 1554 token consumed
+                              tr
+                                td
+                                  code 5/22/2021
+                                td 45 token consumed
+                              tr
+                                td
+                                  code 5/21/2021
+                                td 76 token consumed
+                              tr
+                                td
+                                  code 5/18/2021
+                                td 12 token consumed
+                        #tab-posts.tab-content.clearfix
+                          p
+                            | Here you will se all your activities
+                          table.table
+                            thead
+                              tr
+                                th Time
+                                th Activity
+                            tbody
+                              tr
+                                td
+                                  code 5/23/2021
+                                td 10000 tokens updated
+                              tr
+                                td
+                                  code 5/23/2021
+                                td 20000 tokens updated
+                        #tab-replies.tab-content.clearfix
+                          .clear.topmargin-sm
+                          .row.pricing.col-mb-30.mb-4.g-0
+                            .col-sm-6.col-md-4.col-lg-1-5
+                              .pricing-box.pricing-minimal.text-center
+                                .pricing-title.title-sm
+                                  h3 Starter
+                                  span 1000 tokens
+                                .pricing-price
+                                  span.price-unit &#x20B9;
+                                  | 100
+                                  span.price-tenure
+                                .pricing-action.px-4
+                                  form
+                                    script(src='https://checkout.razorpay.com/v1/payment-button.js' data-payment_button_id='pl_KLDUS9vyYaZ7Qu' async='')
+                            .col-sm-6.col-md-4.col-lg-1-5
+                              .pricing-box.pricing-minimal.pricing-highlight.text-center
+                                .pricing-title.title-sm
+                                  h3 Professional
+                                  span 5500 tokens
+                                .pricing-price
+                                  span.price-unit &#x20B9;
+                                  | 500
+                                  span.price-tenure
+                                .pricing-action.px-4
+                                  form
+                                    script(src='https://checkout.razorpay.com/v1/payment-button.js' data-payment_button_id='pl_KLDUS9vyYaZ7Qu' async='')
+                            .col-sm-6.col-md-4.col-lg-1-5
+                              .pricing-box.pricing-minimal.text-center
+                                .pricing-title.title-sm
+                                  h3 Business
+                                  span 12000 tokens
+                                .pricing-price
+                                  span.price-unit &#x20B9;
+                                  | 1000
+                                  span.price-tenure
+                                .pricing-action.px-4
+                                  form
+                                    script(src='https://checkout.razorpay.com/v1/payment-button.js' data-payment_button_id='pl_KLDUS9vyYaZ7Qu' async='')
+                            .col-sm-6.col-md-4.col-lg-1-5
+                              .pricing-box.pricing-minimal.text-center
+                                .pricing-title.title-sm
+                                  h3 Enterprise
+                                  span 25000 tokens
+                                .pricing-price
+                                  span.price-unit &#x20B9;
+                                  | 2000
+                                  span.price-tenure
+                                .pricing-action.px-4
+                                  form
+                                    script(src='https://checkout.razorpay.com/v1/payment-button.js' data-payment_button_id='pl_KLDUS9vyYaZ7Qu' async='')
+                            .col-sm-6.col-md-4.col-lg-1-5
+                              .pricing-box.pricing-minimal.text-center
+                                .pricing-title.title-sm
+                                  h3 Pro Plus
+                                  span 70,000 tokens
+                                .pricing-price
+                                  span.price-unit &#x20B9;
+                                  | 5000
+                                  span.price-tenure
+                                .pricing-action.px-4
+                                  form
+                                    script(src='https://checkout.razorpay.com/v1/payment-button.js' data-payment_button_id='pl_KLDUS9vyYaZ7Qu' async='')
+
+                        #tab-connections.tab-content.clearfix
+                          .row.topmargin-sm
+                            .col-lg-3.col-md-6.bottommargin
+                              .team
+                                .team-image
+                                  img(src='/images/team/3.jpg' alt='John Doe')
+                                .team-desc
+                                  .team-title
+                                    h4 John Doe
+                                    span CEO
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                    i.icon-facebook
+                                    i.icon-facebook
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                    i.icon-twitter
+                                    i.icon-twitter
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                    i.icon-gplus
+                                    i.icon-gplus
+                            .col-lg-3.col-md-6.bottommargin
+                              .team
+                                .team-image
+                                  img(src='/images/team/2.jpg' alt='Josh Clark')
+                                .team-desc
+                                  .team-title
+                                    h4 Josh Clark
+                                    span Co-Founder
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                    i.icon-facebook
+                                    i.icon-facebook
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                    i.icon-twitter
+                                    i.icon-twitter
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                    i.icon-gplus
+                                    i.icon-gplus
+                            .col-lg-3.col-md-6.bottommargin
+                              .team
+                                .team-image
+                                  img(src='/images/team/8.jpg' alt='Mary Jane')
+                                .team-desc
+                                  .team-title
+                                    h4 Mary Jane
+                                    span Sales
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                    i.icon-facebook
+                                    i.icon-facebook
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                    i.icon-twitter
+                                    i.icon-twitter
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                    i.icon-gplus
+                                    i.icon-gplus
+                            .col-lg-3.col-md-6
+                              .team
+                                .team-image
+                                  img(src='/images/team/4.jpg' alt='Nix Maxwell')
+                                .team-desc
+                                  .team-title
+                                    h4 Nix Maxwell
+                                    span Support
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-facebook(href='#')
+                                    i.icon-facebook
+                                    i.icon-facebook
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-twitter(href='#')
+                                    i.icon-twitter
+                                    i.icon-twitter
+                                  a.social-icon.inline-block.si-small.si-light.si-rounded.si-gplus(href='#')
+                                    i.icon-gplus
+                                    i.icon-gplus  
+      include ./partials/footer.pug
+                    
+    #gotoTop.icon-angle-up
+    script(src='/js/jquery.js')
+    script(src='/js/plugins.min.js')
+    script(src='/js/functions.js')
+    script(src="/rpanel/js/client/logout.js" type="text/javascript")
+    script(src="/rpanel/js/client/account.js" type="text/javascript")

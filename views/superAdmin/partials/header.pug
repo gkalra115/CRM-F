@@ -1,0 +1,106 @@
+#kt_subheader.kt-subheader.kt-grid__item
+  .kt-container.kt-container--fluid
+    .kt-subheader__main
+      h3.kt-subheader__title #{userrole}
+      span.kt-subheader__desc #{userid}
+    if pageTitle === "SU | Dashboard" || pageLink
+      .kt-subheader__toolbar
+        a#tillEot.btn.kt-subheader__btn-secondary(href='javascript:void(0);' onclick="tillEOT()") Till EOT
+        a#kt_dashboard_daterangepicker_3.btn.kt-subheader__btn-daterange(href='javascript:void(0);', data-toggle='kt-tooltip', title='Select dashboard daterange', data-placement='left')
+          span#kt_dashboard_daterangepicker_title_3.kt-subheader__btn-daterange-title(style="padding-right:0.6rem") Current 
+          span#kt_dashboard_daterangepicker_date_3.kt-subheader__btn-daterange-date  01-2020
+          i.flaticon2-calendar-1
+    if pageTitle === "SU | Task List"
+      .kt-subheader__toolbar
+        .kt-header__topbar
+          .kt-header__topbar-item(onClick='toggleTaskCanvas()')
+            .kt-header__topbar-wrapper
+              span.kt-header__topbar-icon.kt-pulse--brand
+                svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewbox='0 0 24 24', version='1.1')
+                  g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                    rect(x='0', y='0', width='24', height='24')
+                    rect(fill='#000000', opacity='0.3', x='13', y='4', width='3', height='16', rx='1.5')
+                    rect(fill='#000000', x='8', y='9', width='3', height='11', rx='1.5')
+                    rect(fill='#000000', x='18', y='11', width='3', height='9', rx='1.5')
+                    rect(fill='#000000', x='3', y='13', width='3', height='7', rx='1.5')
+        #kt_daterangepicker_2(style="display:inline-flex; margin-right:1rem;")
+          input.form-control(type='text', readonly='', placeholder='Select date range')
+          .input-group-append
+            span.input-group-text
+              i.la.la-calendar-check-o
+        #hideSelectGo.form-group(style="float:left; margin-bottom:0")
+          .input-group
+            select#kt_select2_112.form-control.kt-select2(name='param')
+              option(value='all') All
+              option(value='101') Unassigned
+              option(value='102') Assigned To Admin
+              option(value='103') Assigned To Manager
+              option(value='104') Assigned To Team Lead
+              option(value='105') Running
+              option(value='106') Quality Check
+            .input-group-append
+              button#applyFilter.btn.btn-brand(type='button') Go!    
+        .dropdown.dropdown-inline(data-toggle='kt-tooltip', title='Quick actions', data-placement='left')
+          a.btn.btn-icon(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewbox='0 0 24 24', version='1.1')
+              g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                rect(x='0', y='0', width='24', height='24')
+                path(d='M5,4 L19,4 C19.2761424,4 19.5,4.22385763 19.5,4.5 C19.5,4.60818511 19.4649111,4.71345191 19.4,4.8 L14,12 L14,20.190983 C14,20.4671254 13.7761424,20.690983 13.5,20.690983 C13.4223775,20.690983 13.3458209,20.6729105 13.2763932,20.6381966 L10,19 L10,12 L4.6,4.8 C4.43431458,4.5790861 4.4790861,4.26568542 4.7,4.1 C4.78654809,4.03508894 4.89181489,4 5,4 Z', fill='#000000')
+            // <i class="flaticon2-plus"></i>
+          .dropdown-menu.dropdown-menu-fit.dropdown-menu-md.dropdown-menu-right
+            // begin::Nav
+            ul.kt-nav
+              li.kt-nav__head
+                | Add anything or jump to:
+                i.flaticon2-information(data-toggle='kt-tooltip', data-placement='right', title='Click to learn more...')
+              li.kt-nav__separator
+              li.kt-nav__item
+                a.kt-nav__link(href='javascript:void(0)', onclick="displayFilteredTable('200', 'false')")
+                  span.kt-nav__link-icon
+                    svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewBox='0 0 24 24', version='1.1')
+                      g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                        rect(x='0', y='0', width='24', height='24')
+                        path(d='M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z', fill='#000000')
+                        rect(fill='#000000', opacity='0.3', transform='translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) ', x='16.3255682', y='2.94551858', width='3', height='18', rx='1')
+                  span.kt-nav__link-text All Task
+              li.kt-nav__item
+                a.kt-nav__link(href='javascript:void(0)', onclick="displayFilteredTable('201', 'false')")
+                  span.kt-nav__link-icon
+                    svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewBox='0 0 24 24', version='1.1')
+                        g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                          rect(x='0', y='0', width='24', height='24')
+                          path(d='M16.5428932,17.4571068 L11,11.9142136 L11,4 C11,3.44771525 11.4477153,3 12,3 C12.5522847,3 13,3.44771525 13,4 L13,11.0857864 L17.9571068,16.0428932 L20.1464466,13.8535534 C20.3417088,13.6582912 20.6582912,13.6582912 20.8535534,13.8535534 C20.9473216,13.9473216 21,14.0744985 21,14.2071068 L21,19.5 C21,19.7761424 20.7761424,20 20.5,20 L15.2071068,20 C14.9309644,20 14.7071068,19.7761424 14.7071068,19.5 C14.7071068,19.3673918 14.7597852,19.2402148 14.8535534,19.1464466 L16.5428932,17.4571068 Z', fill='#000000', fill-rule='nonzero')
+                          path(d='M7.24478854,17.1447885 L9.2464466,19.1464466 C9.34021479,19.2402148 9.39289321,19.3673918 9.39289321,19.5 C9.39289321,19.7761424 9.16903559,20 8.89289321,20 L3.52893218,20 C3.25278981,20 3.02893218,19.7761424 3.02893218,19.5 L3.02893218,14.136039 C3.02893218,14.0034307 3.0816106,13.8762538 3.17537879,13.7824856 C3.37064094,13.5872234 3.68722343,13.5872234 3.88248557,13.7824856 L5.82567301,15.725673 L8.85405776,13.1631936 L10.1459422,14.6899662 L7.24478854,17.1447885 Z', fill='#000000', fill-rule='nonzero', opacity='0.3')
+                  span.kt-nav__link-text Upcoming Task
+              li.kt-nav__item
+                a.kt-nav__link(href='javascript:void(0)', onclick="displayFilteredTable('202', 'true')")
+                  span.kt-nav__link-icon
+                    svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewBox='0 0 24 24', version='1.1')
+                      g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                        rect(x='0', y='0', width='24', height='24')
+                        circle(fill='#000000', opacity='0.3', cx='12', cy='12', r='10')
+                        path(d='M16.7689447,7.81768175 C17.1457787,7.41393107 17.7785676,7.39211077 18.1823183,7.76894473 C18.5860689,8.1457787 18.6078892,8.77856757 18.2310553,9.18231825 L11.2310553,16.6823183 C10.8654446,17.0740439 10.2560456,17.107974 9.84920863,16.7592566 L6.34920863,13.7592566 C5.92988278,13.3998345 5.88132125,12.7685345 6.2407434,12.3492086 C6.60016555,11.9298828 7.23146553,11.8813212 7.65079137,12.2407434 L10.4229928,14.616916 L16.7689447,7.81768175 Z', fill='#000000', fill-rule='nonzero')
+                  span.kt-nav__link-text Completed Task
+              li.kt-nav__item
+                a.kt-nav__link(href='javascript:void(0)', onclick="displayFilteredTable('204', 'false')")
+                  span.kt-nav__link-icon
+                    svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewBox='0 0 24 24', version='1.1')
+                      g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                        rect(x='0', y='0', width='24', height='24')
+                        path(d='M12,21 C7.581722,21 4,17.418278 4,13 C4,8.581722 7.581722,5 12,5 C16.418278,5 20,8.581722 20,13 C20,17.418278 16.418278,21 12,21 Z', fill='#000000', opacity='0.3')
+                        path(d='M13,5.06189375 C12.6724058,5.02104333 12.3386603,5 12,5 C11.6613397,5 11.3275942,5.02104333 11,5.06189375 L11,4 L10,4 C9.44771525,4 9,3.55228475 9,3 C9,2.44771525 9.44771525,2 10,2 L14,2 C14.5522847,2 15,2.44771525 15,3 C15,3.55228475 14.5522847,4 14,4 L13,4 L13,5.06189375 Z', fill='#000000')
+                        path(d='M16.7099142,6.53272645 L17.5355339,5.70710678 C17.9260582,5.31658249 18.5592232,5.31658249 18.9497475,5.70710678 C19.3402718,6.09763107 19.3402718,6.73079605 18.9497475,7.12132034 L18.1671361,7.90393167 C17.7407802,7.38854954 17.251061,6.92750259 16.7099142,6.53272645 Z', fill='#000000')
+                        path(d='M11.9630156,7.5 L12.0369844,7.5 C12.2982526,7.5 12.5154733,7.70115317 12.5355117,7.96165175 L12.9585886,13.4616518 C12.9797677,13.7369807 12.7737386,13.9773481 12.4984096,13.9985272 C12.4856504,13.9995087 12.4728582,14 12.4600614,14 L11.5399386,14 C11.2637963,14 11.0399386,13.7761424 11.0399386,13.5 C11.0399386,13.4872031 11.0404299,13.4744109 11.0414114,13.4616518 L11.4644883,7.96165175 C11.4845267,7.70115317 11.7017474,7.5 11.9630156,7.5 Z', fill='#000000')
+                  span.kt-nav__link-text Delayed Task
+              li.kt-nav__item
+                a.kt-nav__link(href='javascript:void(0)', onclick="displayFilteredTable('203', 'true')")
+                  span.kt-nav__link-icon
+                    svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewBox='0 0 24 24', version='1.1')
+                      g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                        rect(x='0', y='0', width='24', height='24')
+                        path(d='M4.88230018,17.2353996 L13.2844582,0.431083506 C13.4820496,0.0359007077 13.9625881,-0.12427877 14.3577709,0.0733126292 C14.5125928,0.15072359 14.6381308,0.276261584 14.7155418,0.431083506 L23.1176998,17.2353996 C23.3152912,17.6305824 23.1551117,18.1111209 22.7599289,18.3087123 C22.5664522,18.4054506 22.3420471,18.4197165 22.1378777,18.3482572 L14,15.5 L5.86212227,18.3482572 C5.44509941,18.4942152 4.98871325,18.2744737 4.84275525,17.8574509 C4.77129597,17.6532815 4.78556182,17.4288764 4.88230018,17.2353996 Z', fill='#000000', fill-rule='nonzero', transform='translate(14.000087, 9.191034) rotate(-315.000000) translate(-14.000087, -9.191034) ')
+                  span.kt-nav__link-text Delivered Task
+            // end::Nav
+
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript")
+    script(src="/../rpanel/js/su/logout.js" type="text/javascript")

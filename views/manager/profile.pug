@@ -1,0 +1,602 @@
+//- doctype html
+//- html(lang="en")
+//-   include ./partials/head.pug
+//-   body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading
+//-     // begin:: Page
+//-     // begin:: Header Mobile
+//-     #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+//-       .kt-header-mobile__logo
+//-         a(href="index.html")
+//-           img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+//-       .kt-header-mobile__toolbar
+//-         button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+//-           span
+//-         button#kt_header_mobile_toggler.kt-header-mobile__toggler
+//-           span
+//-         button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+//-           i.flaticon-more
+//-     // end:: Header Mobile
+//-     .kt-grid.kt-grid--hor.kt-grid--root
+//-       .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+//-         include ./partials/sidenav.pug
+//-         #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+//-           // begin:: Header
+//-           include ./partials/topnav.pug
+//-           #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+//-             // begin:: Content Head
+//-             include ./partials/header.pug
+//-             .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid
+//-               // Begin::Dashboard 3
+//-               // Begin::Row
+//-               .kt-grid.kt-grid--desktop.kt-grid--ver.kt-grid--ver-desktop.kt-app
+//-                 #kt_user_profile_aside.kt-grid__item.kt-app__toggle.kt-app__aside
+//-                     .kt-portlet.kt-portlet--height-fluid-
+//-                         .kt-portlet__head.kt-portlet__head--noborder
+//-                             .kt-portlet__head-label
+//-                                 h3.kt-portlet__head-title
+//-                         .kt-portlet__body
+//-                             // begin::Widget
+//-                             .kt-widget.kt-widget--user-profile-2
+//-                                 .kt-widget__head
+//-                                     .form-group.row
+//-                                         .col-lg-12.col-xl-12
+//-                                             #kt_user_avatar_3.kt-avatar.kt-avatar--outline.kt-avatar--circle
+//-                                                 .kt-avatar__holder(style='background-image: url(/assets/media/users/100_3.jpg)')
+//-                                                 label.kt-avatar__upload(data-toggle='kt-tooltip', title='', data-original-title='Change avatar')
+//-                                                     i.fa.fa-pen
+//-                                                     input(type='file', name='profile_avatar', accept='.png, .jpg, .jpeg')
+//-                                                 span.kt-avatar__cancel(data-toggle='kt-tooltip', title='', data-original-title='Cancel avatar')
+//-                                                     i.fa.fa-times
+//-                                             span.form-text.text-muted Allowed file types:  png, jpg, jpeg.
+//-                                     .kt-widget__info
+//-                                         a.kt-widget__username(href='#')
+//-                                             #expertname
+//-                                         span.kt-widget__desc
+//-                                             #expertdesignation
+//-                                 .kt-widget__body
+//-                                     .kt-widget__content
+//-                                         .kt-widget__stats.kt-margin-r-20
+//-                                             .kt-widget__icon
+//-                                                 i.flaticon-notes
+//-                                             .kt-widget__details
+//-                                                 span.kt-widget__title Wordcount
+//-                                                 span.kt-widget__value
+//-                                                     span
+//-                                                     #totalwordcountcount
+//-                                         .kt-widget__stats
+//-                                             .kt-widget__icon
+//-                                                 i.flaticon-edit-1
+//-                                             .kt-widget__details
+//-                                                 span.kt-widget__title Total task
+//-                                                 span.kt-widget__value
+//-                                                     span
+//-                                                     #totaltaskcount
+//-                                     .kt-widget__item
+//-                                         .kt-widget__contact
+//-                                             span.kt-widget__label Email:
+//-                                             a.kt-widget__data(href='#')#expertemail
+//-                                         .kt-widget__contact
+//-                                             span.kt-widget__label Phone:
+//-                                             a.kt-widget__data(href='#')#expertphone
+//-                         ul.kt-nav.kt-nav--bold.kt-nav--md-space.kt-margin-t-20.kt-margin-b-20(role='tablist')
+//-                             li.kt-nav__item#personallink
+//-                                 a.kt-nav__link#personalinfo(data-toggle='tab', role='tab')
+//-                                     span.kt-nav__link-icon
+//-                                         i.flaticon2-calendar-3
+//-                                     span.kt-nav__link-text Personal Information
+//-                             //- li.kt-nav__item
+//-                             //-     a.kt-nav__link(data-toggle='tab', href='#kt_profile_tab_account_information', role='tab')
+//-                             //-         span.kt-nav__link-icon
+//-                             //-             i.flaticon2-protected
+//-                             //-         span.kt-nav__link-text Bank Acccount Information
+//-                             li.kt-nav__item#statlink
+//-                                 a.kt-nav__link#statsinfo(role='tab')
+//-                                     span.kt-nav__link-icon
+//-                                         i.flaticon2-hourglass-1
+//-                                     span.kt-nav__link-text Stats
+//-                         // end::Navigation
+//-                 .kt-grid__item.kt-grid__item--fluid.kt-app__content#statsexpert(style="display:none")
+//-                     .row
+//-                         .col
+//-                             // Begin::Section
+//-                             .kt-portlet
+//-                                 .kt-portlet__body.kt-portlet__body--fit
+//-                                     .row.row-no-padding.row-col-separator-xl
+//-                                         .col-md-12.col-lg-12.col-xl-4
+//-                                             // begin:: Widgets/Stats2-1
+//-                                             .kt-widget1
+//-                                                 .kt-widget1__item
+//-                                                     .kt-widget1__info
+//-                                                         h3.kt-widget1__title Total wordcount
+//-                                                         span.kt-widget1__desc total wordcount as per assigned task
+//-                                                     span.kt-widget1__number.kt-font-brand#totalwordcount
+//-                                                 .kt-widget1__item
+//-                                                     .kt-widget1__info
+//-                                                         h3.kt-widget1__title Total Task
+//-                                                         span.kt-widget1__desc these are the number of task delivered 
+//-                                                     span.kt-widget1__number.kt-font-danger#totaltask
+//-                 .kt-grid__item.kt-grid__item--fluid.kt-app__content#userdetails(style="display:none")
+//-                     .row
+//-                         .col
+//-                             // Begin::Section
+//-                             .kt-portlet
+//-                                 .kt-portlet__body.kt-portlet__body--fit
+//-                                     .row.row-no-padding.row-col-separator-xl
+//-                                         .col-md-12.col-lg-12.col-xl-4
+//-                                             // begin:: Widgets/Stats2-1
+//-                                             .kt-widget1
+//-                                                 .kt-widget1__item
+//-                                                     .kt-widget1__info
+//-                                                         h3.kt-widget1__title Joining Date
+//-                                                     span.kt-widget1__number.kt-font-brand#joiningdate
+//-                                                 .kt-widget1__item
+//-                                                     .kt-widget1__info
+//-                                                         h3.kt-widget1__title Lead
+//-                                                     span.kt-widget1__number.kt-font-danger#teamlead
+//-           include ./partials/footer.pug
+//-           // end::Modal
+//-           // begin::Modal
+//-           #kt_modal_4.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+//-             .modal-dialog.modal-lg(role='document')
+//-               .modal-content
+//-                 .modal-header
+//-                   h5#modalTitle.modal-title Add a new Employee
+//-                   button.close(type='button', data-dismiss='modal', aria-label='Close')
+//-                 .modal-body
+//-                   .kt-scroll(data-scroll='true', data-height='400')
+//-                     form#createEmployee
+//-                       .form-group
+//-                         label.form-control-label(for='email') Name:
+//-                         input#name.form-control.empname(type='text')
+//-                       .form-group
+//-                         label.form-control-label(for='email') Email:
+//-                         input#email.form-control.empemail(type='email')
+//-                       .form-group
+//-                         label.form-control-label(for='phone') Phone:
+//-                         input#phone.form-control.empphone(type='tel')
+//-                       .form-group
+//-                         label.form-control-label(for='salary') Salary:
+//-                         input#salary.form-control.empsalary(type='text')
+//-                       .form-group
+//-                         label.form-control-label(for='jDate') Joining Date:
+//-                         input#joiningDate.form-control.empjoindate(type='date')        
+//-                       .form-group
+//-                         label Role
+//-                         select#user_role.custom-select.form-control
+//-                           option(selected='') Select role
+//-                           option(value='SuperAdmin') Super Admin
+//-                           option(value='Admin') Admin
+//-                           option(value='Manager') Manager
+//-                           option(value='TeamLead') Team Lead
+//-                           option(value='Expert') Expert
+//-                       #statusInput.form-group(style="display:none;")
+//-                         label(for='status') Status
+//-                         select#status.form-control
+//-                           option(value='Active') Active
+//-                           option(value='In-Active') In-Active   
+//-                 .modal-footer
+//-                   button.btn.btn-secondary(type='button', data-dismiss='modal' ) Close
+//-                   button#actionButton.btn.btn-primary(type='button' onclick="createEmployee()") Create
+//-           // end::Modal
+//-     // begin::Quick Panel
+//-     #kt_quick_panel.kt-quick-panel
+//-       a#kt_quick_panel_close_btn.kt-quick-panel__close(href='#')
+//-         i.flaticon2-delete
+//-       .kt-portlet.kt-portlet--height-fluid(style='padding: 2rem 0 0;')
+//-         .kt-portlet__body.kt-portlet__body--fit
+//-           // begin::Widget
+//-           .kt-widget.kt-widget--project-1
+//-             .kt-widget__head
+//-               .kt-widget__label
+//-                 .kt-widget__media
+//-                   span.kt-media.kt-media--lg.kt-media--circle
+//-                     img(src='/assets/media/project-logos/3.png', alt='image')
+//-                 .kt-widget__info.kt-margin-t-5
+//-                   a#kt-widget__title.kt-widget__title Nexa - Next generation SAAS
+//-                   span#kt-widget__desc.kt-widget__desc Creates Limitless possibilities
+//-               .kt-portlet__head-toolbar
+//-                 a.btn.btn-clean.btn-sm.btn-icon.btn-icon-md(href='#', data-toggle='dropdown', aria-expanded='false')
+//-                   i.flaticon-more-1
+//-                 .dropdown-menu.dropdown-menu-fit.dropdown-menu-right
+//-                   ul.kt-nav
+//-                     li.kt-nav__item
+//-                       a.kt-nav__link(href='#')
+//-                         i.kt-nav__link-icon.flaticon2-line-chart
+//-                         span.kt-nav__link-text Reports
+//-                     li.kt-nav__item
+//-                       a.kt-nav__link(href='#')
+//-                         i.kt-nav__link-icon.flaticon2-send
+//-                         span.kt-nav__link-text Messages
+//-                     li.kt-nav__item
+//-                       a.kt-nav__link(href='#')
+//-                         i.kt-nav__link-icon.flaticon2-pie-chart-1
+//-                         span.kt-nav__link-text Charts
+//-                     li.kt-nav__item
+//-                       a.kt-nav__link(href='#')
+//-                         i.kt-nav__link-icon.flaticon2-avatar
+//-                         span.kt-nav__link-text Members
+//-                     li.kt-nav__item
+//-                       a.kt-nav__link(href='#')
+//-                         i.kt-nav__link-icon.flaticon2-settings
+//-                         span.kt-nav__link-text Settings
+//-             .kt-widget__body
+//-               .kt-widget__stats
+//-                 .kt-widget__item
+//-                   span.kt-widget__date Status
+//-                   #kt-widget__label_status.kt-widget__label
+//-                     span.btn.btn-label-brand.btn-sm.btn-bold.btn-upper 07 may, 18
+//-                 .kt-widget__item
+//-                   span.kt-widget__date Phone
+//-                   .kt-widget__label
+//-                     span#kt-widget__label_phone.btn.btn-label-danger.btn-sm.btn-bold.btn-upper 07 0ct, 18
+//-               span.kt-widget__text
+//-                 | I distinguish three main text objecttives.First, your objective could
+//-                 | be merely to inform people.A second be to persuade people.
+//-               .kt-widget__content
+//-                 .kt-widget__details
+//-                   span.kt-widget__subtitle Salary
+//-                   span#kt-widget__subtitle_salary.kt-widget__value
+//-                     span 
+//-                     | 249,500
+//-                 .kt-widget__details
+//-                   span.kt-widget__subtitle Joining Date
+//-                   span#kt-widget__subtitle_jDate.kt-widget__value
+//-                     span $
+//-                     | 76,810
+//-             .kt-widget__footer
+//-               .kt-widget__wrapper
+//-                 .kt-widget__section
+//-                   .kt-widget__blog
+//-                     i.flaticon2-list-1
+//-                     a.kt-widget__value.kt-font-brand(href='#') 72 Tasks
+//-                   .kt-widget__blog
+//-                     i.flaticon2-talk
+//-                     a.kt-widget__value.kt-font-brand(href='#') 648 Comments
+//-                 .kt-widget__section
+//-                   button.btn.btn-brand.btn-sm.btn-upper.btn-bold(type='button') details
+//-           // end::Widget
+//-     // end::Quick Panel
+//-     #kt_scrolltop.kt-scrolltop
+//-       i.fa.fa-arrow-up
+//-     script.
+//-       var KTAppOptions = {
+//-       "colors": {
+//-       "state": {
+//-       "brand": "#5d78ff",
+//-       "dark": "#282a3c",
+//-       "light": "#ffffff",
+//-       "primary": "#5867dd",
+//-       "success": "#34bfa3",
+//-       "info": "#36a3f7",
+//-       "warning": "#ffb822",
+//-       "danger": "#fd3995"
+//-       },
+//-       "base": {
+//-       "label": [
+//-       "#c5cbe3",
+//-       "#a1a8c3",
+//-       "#3d4465",
+//-       "#3e4466"
+//-       ],
+//-       "shape": [
+//-       "#f0f3ff",
+//-       "#d9dffa",
+//-       "#afb4d4",
+//-       "#646c9a"
+//-       ]
+//-       }
+//-       }
+//-       };
+//-     // end::Global Config
+//-     // begin::Global Theme Bundle(used by all pages)
+//-     script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+//-     script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+//-     // end::Global Theme Bundle
+//-     // begin::Page Vendors(used by this page)
+//-     script(src="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript")
+//-     script(src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript")
+//-     script(src="/assets/plugins/custom/gmaps/gmaps.js" type="text/javascript")
+//-     // end::Page Vendors
+//-     // begin::Page Scripts(used by this page)
+//-     script(src="/assets/plugins/custom/gmaps/gmaps.js" type="text/javascript")
+//-     script(src="/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript")
+//-     script(src="/rpanel/js/manager/profile.js")
+doctype html
+html(lang="en")
+  include ./partials/head.pug
+  body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading
+    // begin:: Page
+    // begin:: Header Mobile
+    #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+      .kt-header-mobile__logo
+        a(href="index.html")
+          img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+      .kt-header-mobile__toolbar
+        button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+          span
+        button#kt_header_mobile_toggler.kt-header-mobile__toggler
+          span
+        button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+          i.flaticon-more
+    // end:: Header Mobile
+    .kt-grid.kt-grid--hor.kt-grid--root
+      .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+        include ./partials/sidenav.pug
+        #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+          // begin:: Header
+          include ./partials/topnav.pug
+          #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+            // begin:: Content Head
+            include ./partials/header.pug
+            .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid
+              // Begin::Dashboard 3
+              // Begin::Row
+              #alertforaccount
+              .row
+                .col-xl-12
+                  // begin:: Widgets/Applications/User/Profile3
+                  .kt-portlet.kt-portlet--height-fluid
+                    .kt-portlet__body
+                      .kt-widget.kt-widget--user-profile-3
+                        .kt-widget__top
+                          .kt-widget__pic.kt-widget__pic--danger.kt-font-danger.kt-font-boldest.kt-font-light#empnameinitials
+                          .kt-widget__content
+                            .kt-widget__head
+                              a.kt-widget__username#empname(href='#')
+                              //- .kt-widget__action
+                              //-   button.btn.btn-label-success.btn-sm.btn-upper(type='button') ask
+                              //-   button.btn.btn-brand.btn-sm.btn-upper(type='button') hire
+                            .kt-widget__subhead
+                              a(href='#')#expertemail
+                              a(href='#')#expertphone
+                              a(href='#')#expertdesignation
+                              a(href='#')#joiningdate
+                                
+                            //- .kt-widget__info
+                            //-   .form-group.row
+                            //-     label.col-9.col-form-label Show desktop notification
+                            //-     .col-3
+                            //-       span.kt-switch.kt-switch--icon
+                            //-         label
+                            //-           input(type='checkbox', checked='checked', name='')
+                            //-           span
+
+                              //- .kt-widget__desc
+                              //-   | I distinguish three main text objektive could be merely to inform people.
+                              //-   br
+                              //-   |  A second could be persuade people.You want people to bay objective
+                              //- .kt-widget__progress
+                              //-   .kt-widget__text
+                              //-     | Progress
+                              //-   .progress(style='height: 5px;width: 100%;')
+                              //-     .progress-bar.kt-bg-success(role='progressbar', style='width: 65%;', aria-valuenow='65', aria-valuemin='0', aria-valuemax='100')
+                              //-   .kt-widget__stats
+                              //-     | 78%
+                        .kt-widget__bottom
+                          .kt-widget__item
+                            .kt-widget__icon
+                              i.flaticon-file-2
+                            .kt-widget__details
+                              span.kt-widget__title#totaltask
+                              a.kt-widget__value.kt-font-brand(href='/te/all') View
+                          .kt-widget__item
+                            .kt-widget__icon
+                              i.flaticon2-open-text-book
+                            .kt-widget__details
+                              span.kt-widget__title Account Details
+                              a.kt-widget__value.kt-font-brand#viewaccount(href='#') View
+                          .kt-widget__item
+                            .kt-widget__icon
+                              i.flaticon-lock
+                            .kt-widget__details
+                              span.kt-widget__title Change password
+                              a.kt-widget__value.kt-font-brand#changepassword(href='#') View
+                          //- .kt-widget__item
+                          //-   .kt-widget__icon
+                          //-     i.flaticon-network
+                          //-   .kt-widget__details
+                          //-     .kt-section__content.kt-section__content--solid
+                          //-       .kt-media-group
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='John Myer')
+                          //-           img(src='/assets/media/users/100_1.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Alison Brandy')
+                          //-           img(src='/assets/media/users/100_10.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Selina Cranson')
+                          //-           img(src='/assets/media/users/100_11.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Luke Walls')
+                          //-           img(src='/assets/media/users/100_2.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Micheal York')
+                          //-           img(src='/assets/media/users/100_3.jpg', alt='image')
+                          //-         a.kt-media.kt-media--sm.kt-media--circle(href='#', data-toggle='kt-tooltip', data-skin='brand', data-placement='top', title='', data-original-title='Micheal York')
+                          //-           span +3
+              .row#accountdetailportlet
+                .col-lg-12
+                  // begin::Portlet
+                  .kt-portlet.kt-portlet--head.kt-portlet--mobile
+                    .kt-portlet__head
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Account 
+                          small Bank Account details
+                    .kt-portlet__body
+                      form#mn-account-form.kt-form.kt-form--label-right
+                        .kt-portlet__body
+                          .form-group.form-group-last
+                            .alert.alert-secondary(role='alert')
+                              .alert-icon
+                                i.flaticon-warning.kt-font-brand
+                              .alert-text
+                                | Please Check your details twice 
+                                code because it will only effect you.
+                          .form-group.row
+                            label.col-2.col-form-label(for='accountNumber') Account number
+                            .col-10
+                              input.form-control.accountnumber(type='text' name='accountNumber')
+                          .form-group.row
+                            label.col-2.col-form-label(for='holderName') Holder Name
+                            .col-10
+                              input.form-control.accholdername(type='text' name='holderName')
+                          .form-group.row
+                            label.col-2.col-form-label(for='bank') Select Bank
+                            .col-10
+                              select#kt_select2_1.form-control.kt-select2.getteam(name='bank' style="width:100%")
+                          .form-group.row
+                            label.col-2.col-form-label(for='ifsc') IFSC
+                            .col-10
+                              input.form-control.ifsccodehere(type='text' name='ifsc')
+                              #bankverification
+                        .kt-portlet__foot
+                          .kt-form__actions
+                            .row
+                              .col-2
+                              .col-10
+                                button.btn.btn-success#submitaccountdetails(type='button') Update
+                                button.btn.btn-secondary#closeaccountportlet(type='button') Close
+              .row#psswordchangeportlet
+                .col-lg-12
+                  // begin::Portlet
+                  .kt-portlet.kt-portlet--head.kt-portlet--mobile
+                    .kt-portlet__head
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Change Password 
+                    .kt-portlet__body
+                      form#mn-change-password.kt-form.kt-form--label-right
+                        .kt-portlet__body
+                          .form-group.row
+                            label.col-2.col-form-label(for='oldPassword') Old Password
+                            .col-10
+                              input.form-control.old_passcode(type='password' name='oldPassword')
+                          .form-group.row
+                            label.col-2.col-form-label(for='newPassword') New Password
+                            .col-10
+                              input#newPassword.form-control.new_passcode(type='password' name='newPassword')
+                          .form-group.row
+                            label.col-2.col-form-label(for='confirmPassword') Confirm Password
+                            .col-10
+                              input.form-control.confirm_passcode(type='password' name='confirmPassword')
+                        .kt-portlet__foot
+                          .kt-form__actions
+                            .row
+                              .col-2
+                              .col-10
+                                button.btn.btn-success#updatepasswordchange(type='button') Update
+                                button.btn.btn-secondary#closepasswordportlet(type='button') Close     
+                      #errormessagepassword             
+          include ./partials/footer.pug
+    // begin::Quick Panel
+    #kt_quick_panel.kt-quick-panel
+      a#kt_quick_panel_close_btn.kt-quick-panel__close(href='#')
+        i.flaticon2-delete
+      .kt-portlet.kt-portlet--height-fluid(style='padding: 2rem 0 0;')
+        .kt-portlet__body.kt-portlet__body--fit
+          // begin::Widget
+          .kt-widget.kt-widget--project-1
+            .kt-widget__head
+              .kt-widget__label
+                .kt-widget__media
+                  span.kt-media.kt-media--lg.kt-media--circle
+                    img(src='/assets/media/project-logos/3.png', alt='image')
+                .kt-widget__info.kt-margin-t-5
+                  a#kt-widget__title.kt-widget__title Nexa - Next generation SAAS
+                  span#kt-widget__desc.kt-widget__desc Creates Limitless possibilities
+              .kt-portlet__head-toolbar
+                a.btn.btn-clean.btn-sm.btn-icon.btn-icon-md(href='#', data-toggle='dropdown', aria-expanded='false')
+                  i.flaticon-more-1
+                .dropdown-menu.dropdown-menu-fit.dropdown-menu-right
+                  ul.kt-nav
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-line-chart
+                        span.kt-nav__link-text Reports
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-send
+                        span.kt-nav__link-text Messages
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-pie-chart-1
+                        span.kt-nav__link-text Charts
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-avatar
+                        span.kt-nav__link-text Members
+                    li.kt-nav__item
+                      a.kt-nav__link(href='#')
+                        i.kt-nav__link-icon.flaticon2-settings
+                        span.kt-nav__link-text Settings
+            .kt-widget__body
+              .kt-widget__stats
+                .kt-widget__item
+                  span.kt-widget__date Status
+                  #kt-widget__label_status.kt-widget__label
+                    span.btn.btn-label-brand.btn-sm.btn-bold.btn-upper 07 may, 18
+                .kt-widget__item
+                  span.kt-widget__date Phone
+                  .kt-widget__label
+                    span#kt-widget__label_phone.btn.btn-label-danger.btn-sm.btn-bold.btn-upper 07 0ct, 18
+              span.kt-widget__text
+                | I distinguish three main text objecttives.First, your objective could
+                | be merely to inform people.A second be to persuade people.
+              .kt-widget__content
+                .kt-widget__details
+                  span.kt-widget__subtitle Salary
+                  span#kt-widget__subtitle_salary.kt-widget__value
+                    span 
+                    | 249,500
+                .kt-widget__details
+                  span.kt-widget__subtitle Joining Date
+                  span#kt-widget__subtitle_jDate.kt-widget__value
+                    span $
+                    | 76,810
+            .kt-widget__footer
+              .kt-widget__wrapper
+                .kt-widget__section
+                  .kt-widget__blog
+                    i.flaticon2-list-1
+                    a.kt-widget__value.kt-font-brand(href='#') 72 Tasks
+                  .kt-widget__blog
+                    i.flaticon2-talk
+                    a.kt-widget__value.kt-font-brand(href='#') 648 Comments
+                .kt-widget__section
+                  button.btn.btn-brand.btn-sm.btn-upper.btn-bold(type='button') details
+          // end::Widget
+    // end::Quick Panel
+    #kt_scrolltop.kt-scrolltop
+      i.fa.fa-arrow-up
+    script.
+      var KTAppOptions = {
+      "colors": {
+      "state": {
+      "brand": "#5d78ff",
+      "dark": "#282a3c",
+      "light": "#ffffff",
+      "primary": "#5867dd",
+      "success": "#34bfa3",
+      "info": "#36a3f7",
+      "warning": "#ffb822",
+      "danger": "#fd3995"
+      },
+      "base": {
+      "label": [
+      "#c5cbe3",
+      "#a1a8c3",
+      "#3d4465",
+      "#3e4466"
+      ],
+      "shape": [
+      "#f0f3ff",
+      "#d9dffa",
+      "#afb4d4",
+      "#646c9a"
+      ]
+      }
+      }
+      };
+    // end::Global Config
+    // begin::Global Theme Bundle(used by all pages)
+    script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+    script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+    script(src="/assets/js/pages/crud/forms/widgets/select2.js" type="text/javascript")
+    script(src="/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript")
+    script(src="/rpanel/js/manager/profile.js")

@@ -1,0 +1,200 @@
+doctype html
+html(lang="en")
+  include ./partials/head.pug
+  link(rel="stylesheet" href="/assets/css/pages/error/error-5.css")
+  body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading.overlayloader
+    // begin:: Page
+    // begin:: Header Mobile
+    #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+      .kt-header-mobile__logo
+        a(href="index.html")
+          img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+      .kt-header-mobile__toolbar
+        button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+          span
+        button#kt_header_mobile_toggler.kt-header-mobile__toggler
+          span
+        button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+          i.flaticon-more
+    // end:: Header Mobile
+    .kt-grid.kt-grid--hor.kt-grid--root
+      .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+        include ./partials/sidenav.pug
+        #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+          // begin:: Header
+          include ./partials/topnav.pug
+          #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+            // begin:: Content Head
+            include ./partials/header.pug
+            .kt-grid.kt-grid--ver.kt-grid--root#errortask(style="margin-top:-20%; display:none;")
+              .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-error-v5(style='background-image: url(/assets/media/error/bg5.jpg);')
+                .kt-error_container
+                  span.kt-error_title
+                    h1 Oops!
+                  p.kt-error_subtitle
+                    | Something went wrong here.
+                  p.kt-error_description
+                    | There is no such task available
+            .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid#task_portlet(style="display:none")
+              // begin:: Portlet
+              .kt-portlet
+                .kt-portlet__body
+                  .kt-widget.kt-widget--user-profile-3
+                    .kt-widget__top
+                      .kt-widget__content
+                        .kt-widget__head
+                          a.kt-widget__title#tasktitle(href='#')
+                          a.btn.btn-outline-brand.btn-bold.btn-sm.dropdown-toggle(href='#', data-toggle='dropdown')
+                            | Actions
+                          .dropdown-menu.dropdown-menu-fit.dropdown-menu-right
+                            ul.kt-nav
+                              li.kt-nav__head
+                                | Task Actions
+                              li.kt-nav__separator
+                              li.kt-nav__item
+                                a.kt-nav__link(data-toggle='modal' data-target='#kt_modal_5')
+                                  i.kt-nav__link-icon.flaticon-user-ok
+                                  span.kt-nav__link-text Assign
+                              li.kt-nav__separator
+                              li.kt-nav__foot
+                                a.btn.btn-clean.btn-bold.btn-sm(data-toggle='modal' data-target='#kt_modal_4' onclick="completetask()") Completed
+                                                            
+                              // end::Nav
+                        .kt-widget__subhead
+                          a(href='#')#taskkey
+                          a(href='#')#wordcount
+                        .kt-widget__info.row(style="padding-top: 10px;")
+                          .kt-widget__desc#taskdesc.col-md-12.kt-scroll(data-scroll="true" style="text-align:justify" data-height="250" )
+                          
+                    .kt-widget__bottom
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-time-1
+                        .kt-widget__details
+                          span.kt-widget__title Deadline
+                          span.kt-widget__value
+                            span#softdeadline
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-confetti
+                        .kt-widget__details
+                          span.kt-widget__title Status
+                          span.kt-widget__value
+                            span#harddeadline
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-presentation-1
+                        .kt-widget__details
+                          span.kt-widget__title Manager
+                          a.kt-widget__value.kt-font-brand#timestampscreated
+                      .kt-widget__item
+                        .kt-widget__icon
+                          i.flaticon-network
+                        .kt-widget__details
+                          span.kt-widget__title Expert
+                          a.kt-widget__value.kt-font-brand#timestampsmodified
+                    //-   .kt-widget__item
+                    //-     .kt-widget__icon
+                    //-       i.flaticon-file-2
+                    //-     .kt-widget__details
+                    //-       span.kt-widget__title Created by
+                    //-       a.kt-widget__value.kt-font-brand(href='#')#createdby
+              .row
+                .col-lg-6
+                  .kt-portlet.kt-margin-top-30#fileupload_portlet
+                    .kt-portlet__head
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Assessment Brief
+                    // begin::Form
+                    .kt-form
+                      .kt-portlet__foot(data-scroll="true" data-height="450")
+                        .kt-widget4#briefupload
+                    // end::Form
+                .col-lg-6
+                  .kt-portlet.kt-margin-top-30#solutionupload_portlet
+                    .kt-portlet__head
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Assessment Solutions
+                      .kt-portlet__head-toolbar
+                                .dropdown.dropdown-inline
+                                  button.btn.btn-clean.btn-sm.btn-icon-md.btn-icon(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                    i.flaticon-more-1
+                                  .dropdown-menu.dropdown-menu-right.dropdown-menu-fit.dropdown-menu-md
+                                    // begin::Nav
+                                    ul.kt-nav
+                                      li.kt-nav__item
+                                        a.kt-nav__link(href='#', onclick="sendFilesToClient()")
+                                          i.kt-nav__link-icon.flaticon-paper-plane-1
+                                          span.kt-nav__link-text Send to Client
+                    // begin::Form
+                    .kt-form
+                      .kt-portlet__body
+                        form(class='solutionuploadform' enctype='multipart/form-data' role='form')
+                          .form-group
+                            label File Browser
+                            div
+                            .custom-file
+                              input.custom-file-input(type='file' name='files1[]' id='files1' multiple)
+                              label.custom-file-label(for='customFile') Choose file
+                            span.form-text.text-muted Max files size at once is 50MB and max number of files is 5.
+                          .kt-form__actions
+                            button.btn.btn-primary(type='submit', id='submit1', name='submit1') Submit
+                      .kt-portlet__foot(data-scroll="true" data-height="250")
+                        .kt-widget4#solutionupload
+          include ./partials/footer.pug
+          #kt_modal_5.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+            .modal-dialog.modal-lg(role='document')
+              .modal-content
+                .modal-header
+                  h5#modalTitle.modal-title Assign Task To
+                  button.close(type='button' data-dismiss='modal' aria-label='Close')
+                .modal-body
+                  form
+                  span#taskAssignId(style="display:none")
+                  .form-group
+                    label(style="display:block") Select an Employee:
+                    select#kt_select2_1.form-control.kt-select2(name='param' style="width:100%")
+                .modal-footer
+                  button#closeAssign.btn.btn-secondary(type='button' data-dismiss='modal' ) Close
+                  button#actionButton.btn.btn-primary(type='button' onclick="taskAssign()") Create
+    #kt_scrolltop.kt-scrolltop
+      i.fa.fa-arrow-up
+    script.
+      var KTAppOptions = {
+      "colors": {
+      "state": {
+      "brand": "#5d78ff",
+      "dark": "#282a3c",
+      "light": "#ffffff",
+      "primary": "#5867dd",
+      "success": "#34bfa3",
+      "info": "#36a3f7",
+      "warning": "#ffb822",
+      "danger": "#fd3995"
+      },
+      "base": {
+      "label": [
+      "#c5cbe3",
+      "#a1a8c3",
+      "#3d4465",
+      "#3e4466"
+      ],
+      "shape": [
+      "#f0f3ff",
+      "#d9dffa",
+      "#afb4d4",
+      "#646c9a"
+      ]
+      }
+      }
+      };
+    // end::Global Config
+    // begin::Global Theme Bundle(used by all pages)
+    script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+    script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+    //script(src="/assets/js/pages/crud/file-upload/dropzonejs.js" type="text/javascript")
+    script(src="/assets/js/pages/custom/chat/chat.js" type="text/javascript")
+    script(src="/assets/js/pages/dashboard.js" type="text/javascript")
+    script(src="/rpanel/js/teamlead/singletask.js")

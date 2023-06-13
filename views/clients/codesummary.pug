@@ -1,0 +1,44 @@
+doctype html
+html(dir='ltr', lang='en-US')
+  include ./partials/head.pug
+  body.stretched
+    #wrapper.clearfix
+      include ./partials/topnav.pug      
+      section#content
+        .loader1(style='display:none;')
+        .content-wrap
+          .container.clearfix
+            .row.justify-content-center.gutter-50.col-mb-50
+              .col-xl-6.col-lg-6.text-left
+                h4 Enter your code and get it better understood
+                #tab-8.tabs.tabs-alt.tabs-tb.clearfix
+                  ul.tab-nav.clearfix
+                    li
+                      a(href='#tabs-29')
+                        i.icon-file-add.me-0
+                  .tab-container
+                    #tabs-29.tab-content.clearfix
+                      .form-group
+                        textarea#createcontent.form-control(rows='15')
+                      a.button.button-border.button-rounded.button-aqua#generatecontet(type="button" onclick="answerquestion()")
+                        i.icon-line-edit-3
+                        | Generate
+
+
+              .col-xl-6.col-lg-6.text-left
+                h4 Your code
+                #tab-8.tabs.tabs-alt.tabs-tb.clearfix
+                  ul.tab-nav.clearfix
+                    li
+                      a(href='#tabs-29')
+                        i.icon-bookmark21.me-0
+                  .tab-container
+                    #tabs-291.tab-content.clearfix
+                      | Generated code will be appered here. Just paste the your Statement and click on Generate
+    #gotoTop.icon-angle-up
+    script(src='/js/jquery.js')
+    script(src='/js/plugins.min.js')
+    script(src='/js/functions.js')
+    script(src="/rpanel/js/client/logout.js" type="text/javascript")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js')
+    script(src='/rpanel/js/client/generatecode.js')

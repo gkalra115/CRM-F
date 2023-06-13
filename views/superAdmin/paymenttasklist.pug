@@ -1,0 +1,167 @@
+doctype html
+html(lang="en")
+  include ./partials/head.pug
+  body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading
+    // begin:: Page
+    // begin:: Header Mobile
+    #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+      .kt-header-mobile__logo
+        a(href="index.html")
+          img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+      .kt-header-mobile__toolbar
+        button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+          span
+        button#kt_header_mobile_toggler.kt-header-mobile__toggler
+          span
+        button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+          i.flaticon-more
+    // end:: Header Mobile
+    .kt-grid.kt-grid--hor.kt-grid--root
+      .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+        include ./partials/sidenav.pug
+        #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+          // begin:: Header
+          include ./partials/topnav.pug
+          #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+            // begin:: Content Head
+            include ./partials/header.pug
+            .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid
+              // Begin::Dashboard 3
+              // Begin::Row
+              .kt-portlet.kt-portlet--mobile
+                .kt-portlet__head
+                  .kt-portlet__head-label
+                    h3.kt-portlet__head-title
+                      | Payment(Client)
+                  .kt-portlet__head-toolbar
+                    .kt-portlet__head-toolbar-wrapper
+                      button#kt_datatable_reload.btn.btn-outline-brand.btn-sm(type='button', style="margin-right:0.5rem;", data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        i.la.la-refresh
+                        |  Reload
+                      .dropdown.dropdown-inline                       
+                        button.btn.btn-outline-brand.btn-sm(type='button', data-toggle='dropdown',  style="margin-right:0.5rem;", aria-haspopup='true', aria-expanded='false')
+                          i.la.la-download
+                          |  Export
+                        .dropdown-menu.dropdown-menu-right
+                          ul.kt-nav
+                            li.kt-nav__section.kt-nav__section--first
+                              span.kt-nav__section-text Export Tools
+                            li.kt-nav__item
+                              a#export_print.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-print
+                                span.kt-nav__link-text Print
+                            li.kt-nav__item
+                              a#export_copy.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-copy
+                                span.kt-nav__link-text Copy
+                            li.kt-nav__item
+                              a#export_excel.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-file-excel-o
+                                span.kt-nav__link-text Excel
+                            li.kt-nav__item
+                              a#export_csv.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-file-text-o
+                                span.kt-nav__link-text CSV
+                            li.kt-nav__item
+                              a#export_pdf.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-file-pdf-o
+                                span.kt-nav__link-text PDF
+                      .dropdown.dropdown-inline                       
+                        button.btn.btn-outline-brand.btn-sm(type='button', data-toggle='dropdown',  style="margin-right:0.5rem;", aria-haspopup='true', aria-expanded='false')
+                          i.la.la-download
+                          |  Filters
+                        .dropdown-menu.dropdown-menu-right
+                          ul.kt-nav
+                            li.kt-nav__section.kt-nav__section--first
+                              span.kt-nav__section-text Payment Status
+                            li.kt-nav__item
+                              a#na_status.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-print
+                                span.kt-nav__link-text N/A
+                            li.kt-nav__item
+                              a#unpaid_status.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-copy
+                                span.kt-nav__link-text Unpaid
+                            li.kt-nav__item
+                              a#partial_status.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-file-excel-o
+                                span.kt-nav__link-text Partial
+                            li.kt-nav__item
+                              a#paid_status.kt-nav__link(href='#')
+                                i.kt-nav__link-icon.la.la-file-text-o
+                                span.kt-nav__link-text Paid
+                .kt-portlet__body
+                  // begin: Search Form
+                  .kt-form.kt-form--label-right.kt-margin-t-20.kt-margin-b-10
+                    .row.align-items-center
+                      .col-xl-8.order-2.order-xl-1
+                        .row.align-items-center
+                          .col-md-4.kt-margin-b-20-tablet-and-mobile
+                            .kt-input-icon.kt-input-icon--left
+                              input#generalSearch.form-control(type='text', placeholder='Search...')
+                              span.kt-input-icon__icon.kt-input-icon__icon--left
+                                span
+                                  i.la.la-search
+                  // end: Search Form
+                .kt-portlet__body(style="padding-top:0")
+                  // begin: Datatable
+                  table#kt_table_3.table.table-striped-.table-bordered.table-hover.table-checkable
+                    thead
+                      tr
+                        th Key
+                        th Title
+                        th Wordcount 
+                        th Deadline
+                        th Client
+                        th BDA
+                        th Payment
+                  // end: Datatable
+
+          include ./partials/footer.pug
+          // end::Modal
+          // begin::Modal
+          // end::Widget
+    // end::Quick Panel
+    #kt_scrolltop.kt-scrolltop
+      i.fa.fa-arrow-up
+    script.
+      var KTAppOptions = {
+      "colors": {
+      "state": {
+      "brand": "#5d78ff",
+      "dark": "#282a3c",
+      "light": "#ffffff",
+      "primary": "#5867dd",
+      "success": "#34bfa3",
+      "info": "#36a3f7",
+      "warning": "#ffb822",
+      "danger": "#fd3995"
+      },
+      "base": {
+      "label": [
+      "#c5cbe3",
+      "#a1a8c3",
+      "#3d4465",
+      "#3e4466"
+      ],
+      "shape": [
+      "#f0f3ff",
+      "#d9dffa",
+      "#afb4d4",
+      "#646c9a"
+      ]
+      }
+      }
+      };
+    // end::Global Config
+    // begin::Global Theme Bundle(used by all pages)
+    script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+    script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+    // end::Global Theme Bundle
+    // begin::Page Vendors(used by this page)
+    script(src="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript")
+    // end::Page Vendors
+    // begin::Page Scripts(used by this page)
+    script(src="/assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript")
+    script(src="/rpanel/js/su/initPaymentClientTable.js" type="text/javascript")
+    

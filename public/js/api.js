@@ -1,0 +1,117 @@
+ const qustions = [
+    {
+        id: 1,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 2,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 3,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 4,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 5,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 6,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 1,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 7,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 8,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 9,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 10,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 11,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 12,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 13,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 14,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 15,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 16,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 17,
+     Image:"",
+     name:"",
+     category:"",
+    },
+    {
+        id: 18,
+     Image:"",
+     name:"",
+     category:"",
+    },
+
+]

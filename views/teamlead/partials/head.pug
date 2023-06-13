@@ -1,0 +1,45 @@
+head
+    meta(charset="utf-8")
+    title #{pageTitle}
+    meta(name="description" content="Aside light skin example")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // begin::Fonts
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700")
+    // end::Fonts
+    link(href="/assets/plugins/custom/jstree/jstree.bundle.css" rel="stylesheet" type="text/css")
+    // begin::Page Vendors Styles(used by this page)
+    link(href="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css")
+    link(href="/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css")
+    // end::Page Vendors Styles
+    // begin::Global Theme Styles(used by all pages)
+    link(href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css")
+    link(href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css")
+    // end::Global Theme Styles
+    // begin::Layout Skins(used by all pages)
+    link(href="/assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css")
+    link(href="/assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css")
+    link(href="/assets/css/skins/brand/light.css" rel="stylesheet" type="text/css")
+    link(href="/assets/css/skins/aside/light.css" rel="stylesheet" type="text/css")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js', type='text/javascript')
+    // end::Layout Skins
+    link(rel="shortcut icon" href="/rpanel/media/requine.png")
+    script.
+      const currentuser = '#{userid}'
+    style.
+        #kt_quick_panel .kt-portlet.kt-portlet--height-fluid {
+        height: calc(100% - 20px) !important;
+        }
+        #kt_quick_panel .kt-portlet.kt-portlet--height-fluid .kt-portlet__body {
+            -webkit-box-flex: 1 !important;
+            -ms-flex-positive: 1 !important;
+            flex-grow: 1 !important;
+        }
+        #kt_table_3_length , #kt_table_3_info , #kt_table_3_paginate , #kt_table_3_filter {
+            padding: 0px 25px;
+        }
+        .read {
+            background: #F8F8F8;
+        }
+        .active-star {
+            color: #FFD700 !important;
+        }

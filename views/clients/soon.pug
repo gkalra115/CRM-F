@@ -1,0 +1,25 @@
+doctype html
+html(dir='ltr', lang='en-US')
+  include ./partials/head.pug
+  body.stretched
+    #wrapper.clearfix
+      include ./partials/topnav.pug      
+      section#content(style="font-family:'Lobster Two', cursive")
+        .content-wrap.py-0
+          .block-hero-21(style='padding: 130px 0')
+            .container
+              .row.flex-row-reverse.justify-content-between.align-items-center
+                .col-lg-6.mt-5.mt-lg-0
+                  img.z-1.position-relative(src='/images/blocks/preview/hero-21/1.svg' alt='Image' style='margin-bottom: -60px;')
+                .col-lg-6
+                  h5.ls3.fw-normal.text-black.op-05.color.mb-3.text-uppercase We Do Care
+                  h1.display-4.nott.ls0.font-primary.color Trust me we are working day and night to make it possible.
+                  p.mw-xs.fw-normal.mb-5.text-larger
+                    | Coming Soon
+              .line.border-width-2.mt-0
+        
+                            
+    #gotoTop.icon-angle-up
+    script(src='/js/jquery.js')
+    script(src='/js/plugins.min.js')
+    script(src='/js/functions.js')

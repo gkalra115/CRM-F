@@ -1,0 +1,111 @@
+#kt_header.kt-header.kt-grid__item.kt-header--fixed
+            // begin:: Header Menu
+            //
+            #kt_header_menu_wrapper.kt-header-menu-wrapper
+              #kt_header_menu.kt-header-menu.kt-header-menu-mobile.kt-header-menu--layout-default
+            // end:: Header Menu
+            // begin:: Header Topbar
+            .kt-header__topbar
+              // begin: Search
+              
+              // begin: Quick panel toggler
+              .kt-header__topbar-item.kt-header__topbar-item--quick-panel(data-toggle='kt-tooltip', title='Quick panel', data-placement='right', style='display:none')
+                span#kt_quick_panel_toggler_btn.kt-header__topbar-icon
+                  svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewbox='0 0 24 24', version='1.1')
+                    g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                      rect(x='0', y='0', width='24', height='24')
+                      rect(fill='#000000', x='4', y='4', width='7', height='7', rx='1.5')
+                      path(d='M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z', fill='#000000', opacity='0.3')
+              // end: Quick panel toggler
+
+              // begin: Notifications
+              //- .kt-header__topbar-item.dropdown
+              //-   .kt-header__topbar-wrapper(data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true")
+              //-     span.kt-header__topbar-icon.kt-pulse.kt-pulse--brand
+              //-       svg.kt-svg-icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewbox="0 0 24 24" version="1.1")
+              //-         g(stroke="none" stroke-width="1" fill="none" fill-rule="evenodd")
+              //-           rect(x="0" y="0" width="24" height="24")
+              //-           path(d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z" fill="#000000" opacity="0.3")
+              //-           path(d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z" fill="#000000")
+              //-       span.kt-pulse__ring
+              //-     //
+              //-       Use dot badge instead of animated pulse effect:
+              //-       <span class="kt-badge kt-badge--dot kt-badge--notify kt-badge--sm kt-badge--brand"></span>
+              //-   .dropdown-menu.dropdown-menu-fit.dropdown-menu-right.dropdown-menu-anim.dropdown-menu-top-unround.dropdown-menu-lg
+              //-     form
+              //-       // begin: Head
+              //-       .kt-head.kt-head--skin-dark.kt-head--fit-x.kt-head--fit-b(style="background-image: url(/assets/media/misc/bg-1.jpg)")
+              //-         h3.kt-head__title
+              //-           | User Notifications
+              //-           span.btn.btn-success.btn-sm.btn-bold.btn-font-md 23 new
+              //-         ul.nav.nav-tabs.nav-tabs-line.nav-tabs-bold.nav-tabs-line-3x.nav-tabs-line-success.kt-notification-item-padding-x(role="tablist")
+              //-           li.nav-item
+              //-             a.nav-link.active.show(data-toggle="tab" href="#topbar_notifications_notifications" role="tab" aria-selected="true") Alerts
+              //-           li.nav-item
+              //-             a.nav-link(data-toggle="tab" href="#topbar_notifications_events" role="tab" aria-selected="false") Events
+              //-           li.nav-item
+              //-             a.nav-link(data-toggle="tab" href="#topbar_notifications_logs" role="tab" aria-selected="false") Logs
+              //-       // end: Head
+              //-       .tab-content
+              //-         #topbar_notifications_notifications.tab-pane.active.show(role="tabpanel")
+              //-           .kt-notification.kt-margin-t-10.kt-margin-b-10.kt-scroll(data-scroll="true" data-height="300" data-mobile-height="200")
+              //-             a.kt-notification__item(href="#")
+              //-               .kt-notification__item-icon
+              //-                 i.flaticon2-line-chart.kt-font-success
+              //-               .kt-notification__item-details
+              //-                 .kt-notification__item-title
+              //-                   | New order has been received
+              //-                 .kt-notification__item-time
+              //-                   | 2 hrs ago
+              //-         #topbar_notifications_events.tab-pane(role="tabpanel")
+              //-           .kt-notification.kt-margin-t-10.kt-margin-b-10.kt-scroll(data-scroll="true" data-height="300" data-mobile-height="200")
+              //-             a.kt-notification__item(href="#")
+              //-               .kt-notification__item-icon
+              //-                 i.flaticon2-psd.kt-font-success
+              //-               .kt-notification__item-details
+              //-                 .kt-notification__item-title
+              //-                   | New report has been received
+              //-                 .kt-notification__item-time
+              //-                   | 23 hrs ago
+              //-         #topbar_notifications_logs.tab-pane(role="tabpanel")
+              //-           .kt-grid.kt-grid--ver(style="min-height: 200px;")
+              //-             .kt-grid.kt-grid--hor.kt-grid__item.kt-grid__item--fluid.kt-grid__item--middle
+              //-               .kt-grid__item.kt-grid__item--middle.kt-align-center
+              //-                 | All caught up!
+              //-                 br
+              //-                 | No new notifications.
+              .kt-header__topbar-item(style="margin-right : 0.5rem;")
+                .kt-header__topbar-wrapper
+                  a.kt-header__topbar-icon.kt-pulse.kt-pulse--brand.removeNotfication(href="/bd/notifications") 
+                    span#lblCartCount.label.pulse.pulse-success.mr-10
+                      i.far.fa-bell
+                      span.badge.badge-primary#notificationsCount
+                        | #{notifications}
+              
+              .kt-header__topbar-item.kt-header__topbar-item--user
+                .kt-header__topbar-wrapper(data-toggle="dropdown" data-offset="0px,0px")
+                  .kt-header__topbar-user
+                    span.kt-header__topbar-welcome.kt-hidden-mobile Hello,
+                    span.kt-header__topbar-username.kt-hidden-mobile Mate
+                    span.kt-badge.kt-badge--username.kt-badge--unified-success.kt-badge--lg.kt-badge--rounded.kt-badge--bold #{avatarinitial}
+                .dropdown-menu.dropdown-menu-fit.dropdown-menu-right.dropdown-menu-anim.dropdown-menu-top-unround.dropdown-menu-xl
+                  // begin: Head
+                  .kt-user-card.kt-user-card--skin-dark.kt-notification-item-padding-x(style="background-image: url(/assets/media/misc/bg-1.jpg)")
+                    .kt-user-card__avatar
+                      img.kt-hidden(alt="Pic" src="/assets/media/users/300_25.jpg")
+                      // use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it)
+                      span.kt-badge.kt-badge--lg.kt-badge--rounded.kt-badge--bold.kt-font-success #{initialletter}
+                    .kt-user-card__name #{username}
+                  // end: Head
+                  // begin: Navigation
+                  .kt-notification
+                    a.kt-notification__item(href="/bd/profile")
+                      .kt-notification__item-icon
+                        i.flaticon2-calendar-3.kt-font-success
+                      .kt-notification__item-details
+                        .kt-notification__item-title.kt-font-bold
+                          | My Profile
+                        .kt-notification__item-time
+                          | Account settings and more
+                    .kt-notification__custom.kt-space-between
+                      button#kt_login_signin_submit.loginclick.btn.btn-brand.btn-elevate.kt-login__btn-primary Sign Out

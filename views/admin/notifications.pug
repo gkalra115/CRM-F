@@ -1,0 +1,159 @@
+doctype html
+html(lang="en")
+  include ./partials/head.pug
+  link(href='/assets/css/pages/todo/todo.css', rel='stylesheet', type='text/css')
+  style.
+      .removeNotfication {
+          display : none ! important;
+        }
+  body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading.overlayloader
+    // begin:: Page
+    // begin:: Header Mobile
+    #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+      .kt-header-mobile__logo
+        a(href="index.html")
+          img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+      .kt-header-mobile__toolbar
+        button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+          span
+        button#kt_header_mobile_toggler.kt-header-mobile__toggler
+          span
+        button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+          i.flaticon-more
+    // end:: Header Mobile
+    .kt-grid.kt-grid--hor.kt-grid--root
+      .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+        include ./partials/sidenav.pug
+        #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+          // begin:: Header
+          include ./partials/topnav.pug
+          #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+            // begin:: Content Head
+            include ./partials/header.pug
+            .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid
+              // Begin::Tasks
+              #kt_todo.kt-grid.kt-grid--desktop.kt-grid--ver-desktop.kt-todo
+                // Begin::Aside Mobile Toggle
+                button#kt_todo_aside_close.kt-todo__aside-close
+                  i.la.la-close
+                // End:: Aside Mobile Toggle
+                // Begin:: Tasks Aside
+                // End:: Tasks Aside
+                // Begin:: Tasks Content
+                #kt_todo_content.kt-grid__item.kt-grid__item--fluid.kt-todo__content
+                  .kt-todo__tasks-bottom
+                    .row
+                      .col-xl-12
+                        // Begin:: Inbox List
+                        #kt_todo_list.kt-grid__item.kt-grid__item--fluid.kt-portlet.kt-portlet--height-fluid.kt-todo__list
+                          .kt-portlet__body.kt-portlet__body--fit-x
+                            .kt-todo__head
+                              .kt-todo__toolbar
+                                .kt-todo__actions.kt-todo__actions--expanded
+                                  .kt-todo__check
+                                    label.kt-checkbox.kt-checkbox--single.kt-checkbox--tick.kt-checkbox--brand
+                                      input#top-check(type='checkbox')
+                                      span
+                                    .btn-group
+                                      button.kt-todo__icon.kt-todo__icon--sm.kt-todo__icon--light(type='button', data-toggle='dropdown')
+                                        i.flaticon2-down
+                                      .dropdown-menu.dropdown-menu-left.dropdown-menu-fit.dropdown-menu-xs
+                                        ul.kt-nav
+                                          li.kt-nav__item
+                                            a.kt-nav__link#read-feature(href='#', onclick='perform_action("read")')
+                                              span.kt-nav__link-text Read
+                                          li.kt-nav__item
+                                            a.kt-nav__link#unread-feature(href='#', onclick='perform_action("unread")')
+                                              span.kt-nav__link-text Unread
+                                          li.kt-nav__item
+                                            a.kt-nav__link#starred-feature(href='#', onclick='perform_action("starred")')
+                                              span.kt-nav__link-text Starred
+                                          li.kt-nav__item
+                                            a.kt-nav__link#unstarred-feature(href='#', onclick='perform_action("unstarred")')
+                                              span.kt-nav__link-text Unstarred
+                                    button.kt-todo__icon.kt-todo__icon--light(type='button', data-toggle='kt-tooltip', class="reload", title='', data-original-title='Reload list')
+                                      i.flaticon2-refresh-arrow
+                                  .kt-todo__panel
+                                    button.kt-todo__icon(data-toggle='dropdown', title='', data-original-title='filter')
+                                      svg.kt-svg-icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewBox='0 0 24 24', version='1.1')
+                                        g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+                                          rect(x='0', y='0', width='24', height='24')
+                                          path(d='M15.9956071,6 L9,6 C7.34314575,6 6,7.34314575 6,9 L6,15.9956071 C4.70185442,15.9316381 4,15.1706419 4,13.8181818 L4,6.18181818 C4,4.76751186 4.76751186,4 6.18181818,4 L13.8181818,4 C15.1706419,4 15.9316381,4.70185442 15.9956071,6 Z', fill='#000000', fill-rule='nonzero', opacity='0.3')
+                                          path(d='M10.1818182,8 L17.8181818,8 C19.2324881,8 20,8.76751186 20,10.1818182 L20,17.8181818 C20,19.2324881 19.2324881,20 17.8181818,20 L10.1818182,20 C8.76751186,20 8,19.2324881 8,17.8181818 L8,10.1818182 C8,8.76751186 8.76751186,8 10.1818182,8 Z', fill='#000000')
+                                    .dropdown-menu.dropdown-menu-left.dropdown-menu-fit.dropdown-menu-xs
+                                        ul.kt-nav
+                                          li.kt-nav__item.kt-nav__item--active
+                                            a.kt-nav__link#all-filter(href='#', onclick="applyFilter('all')")
+                                              span.kt-nav__link-text All
+                                          li.kt-nav__item
+                                            a.kt-nav__link#read-filter(href='#', onclick="applyFilter('read')")
+                                              span.kt-nav__link-text Read
+                                          li.kt-nav__item
+                                            a.kt-nav__link#unread-filter(href='#', onclick="applyFilter('unread')")
+                                              span.kt-nav__link-text Unread
+                                          li.kt-nav__item
+                                            a.kt-nav__link#starred-filter(href='#', onclick="applyFilter('starred')")
+                                              span.kt-nav__link-text Starred
+                                          li.kt-nav__item
+                                            a.kt-nav__link#unstarred-filter(href='#', onclick="applyFilter('unstarred')")
+                                              span.kt-nav__link-text Unstarred      
+                                //button.btn.btn-label-success.btn-upper.btn-sm.btn-bold(type='button') new task
+                            .kt-todo__body
+                              // begin: Datatable
+                              table#kt_table_3.table(style="padding: 0px 25px")
+                                thead(style="display:none")
+                                  tr
+                                    th check
+                                    th title
+                                    th status
+                                    th link
+                              // end: Datatable
+                        // End:: Inbox List
+          include ./partials/footer.pug
+    #kt_scrolltop.kt-scrolltop
+      i.fa.fa-arrow-up
+    script.
+      var KTAppOptions = {
+      "colors": {
+      "state": {
+      "brand": "#5d78ff",
+      "dark": "#282a3c",
+      "light": "#ffffff",
+      "primary": "#5867dd",
+      "success": "#34bfa3",
+      "info": "#36a3f7",
+      "warning": "#ffb822",
+      "danger": "#fd3995"
+      },
+      "base": {
+      "label": [
+      "#c5cbe3",
+      "#a1a8c3",
+      "#3d4465",
+      "#3e4466"
+      ],
+      "shape": [
+      "#f0f3ff",
+      "#d9dffa",
+      "#afb4d4",
+      "#646c9a"
+      ]
+      }
+      }
+      };
+    // end::Global Config
+    // begin::Global Theme Bundle(used by all pages)
+    script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+    script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+    // end::Global Theme Bundle
+    // begin::Page Vendors(used by this page)
+    script(src="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript")
+    script(src="/assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript")
+    // end::Page Vendors
+    // begin::Page Scripts(used by this page)
+    
+    script(src='https://www.chartjs.org/dist/2.9.3/Chart.min.js')
+    //script(src='/assets/js/pages/custom/todo/todo.js')
+    script(src='/rpanel/js/admin/notifications.js')
+    
+    

@@ -1,0 +1,139 @@
+head
+    meta(charset="utf-8")
+    title #{pageTitle}
+    meta(name="description" content="Aside light skin example")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // begin::Fonts
+    if pageTitle === "SU | Create Task"
+        link(rel="stylesheet" href="/assets/css/pages/wizard/wizard-4.css" type="text/css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700")
+    // end::Fonts
+    link(href="/assets/plugins/custom/jstree/jstree.bundle.css" rel="stylesheet" type="text/css")
+    // begin::Page Vendors Styles(used by this page)
+    link(href="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css")
+    link(href="/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css")
+    // end::Page Vendors Styles
+    // begin::Global Theme Styles(used by all pages)
+    link(href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css")
+    link(href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css")
+    // end::Global Theme Styles
+    // begin::Layout Skins(used by all pages)
+    link(href="/assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css")
+    link(href="/assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css")
+    link(href="/assets/css/skins/brand/light.css" rel="stylesheet" type="text/css")
+    link(href="/assets/css/skins/aside/light.css" rel="stylesheet" type="text/css")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js', type='text/javascript')
+    // end::Layout Skins
+    link(rel="shortcut icon" href="/rpanel/media/requine.png")
+    script.
+      const currentuser = '#{userid}'
+    style.
+        #kt_quick_panel .kt-portlet.kt-portlet--height-fluid {
+        height: calc(100% - 20px) !important;
+        }
+        #kt_quick_panel .kt-portlet.kt-portlet--height-fluid .kt-portlet__body {
+            -webkit-box-flex: 1 !important;
+            -ms-flex-positive: 1 !important;
+            flex-grow: 1 !important;
+        }
+         .kt-notification .kt-notification__item{
+          cursor : pointer
+        }
+        .kt-notification .kt-notification__item.notificationRead {
+            -webkit-transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            background-color: #f7f8fa;
+        }
+        .kt-notification .kt-notification__item:hover .kt-notification__item-details .kt-notification__item-title{
+              color: #595d6e !important;
+        }
+        .kt-notification .kt-notification__item .kt-notification__item-details .kt-notification__item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #595d6e;
+        }
+        .kt-notification .kt-notification__item.notificationRead .kt-notification__item-details .kt-notification__item-title {
+            font-weight: 400;
+            color: #595d6e;
+        }
+        #noti-search {
+            background: #f7f8fa;
+            padding: 0.65rem 1rem;
+            border: none;
+        }
+        .kt-svg-icon {
+            height: 20px;
+        }
+        .input-group-text {
+            border: none;
+        }
+        #sr-pr {
+            display: flex;
+            justify-content: space-between;
+            margin: 2vh 0vh;
+        }
+        #sr-left {
+            display: inline;
+        }
+        #sr-right {
+            display: inline;
+        }
+        .kt-checkbox {
+            margin-bottom: 0px;
+        }
+        .kt-inbox-icon {
+            display: inline;
+        }
+        .kt-inbox__controls > div {
+            display: inline;
+        }
+        .kt-inbox__controls > button , .kt-inbox__sort > button {
+            display: inline;
+            background: #e4e8ee;
+            color: #646c9a;
+            border: none;
+            margin: 0vw .5vw;
+            padding: 8px;
+        }
+        #sr-left > label > span {
+            width: 20px;
+            height: 20px;
+        }
+        #sr-left > label {
+            margin-right: 0px;
+        }
+        .kt-inbox__sort > ul {
+            display: none;
+        }
+        .inline {
+            display: inline;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .margin {
+            margin: 0vw 2vw;
+        }
+        .not-tilte {
+            width: 35vw;
+        }
+        .n-name {
+            color: #646c9a;
+        }
+        .fil-list {
+            display: block !important;
+            position: absolute;
+            background: #FFFFFF;
+            padding: 1vw 6vw;
+            color: #646c9a !important;
+        }
+        #kt_table_3_length , #kt_table_3_info , #kt_table_3_paginate , #kt_table_3_filter {
+            padding: 0px 25px;
+        }
+        .read {
+            background: #F8F8F8;
+        }
+        .active-star {
+            color: #FFD700 !important;
+        }

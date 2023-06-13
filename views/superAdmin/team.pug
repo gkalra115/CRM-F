@@ -1,0 +1,113 @@
+doctype html
+html(lang="en")
+  include ./partials/head.pug
+  body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading.overlayloader
+    // begin:: Page
+    // begin:: Header Mobile
+    #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+      .kt-header-mobile__logo
+        a(href="index.html")
+          img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+      .kt-header-mobile__toolbar
+        button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+          span
+        button#kt_header_mobile_toggler.kt-header-mobile__toggler
+          span
+        button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+          i.flaticon-more
+    // end:: Header Mobile
+    .kt-grid.kt-grid--hor.kt-grid--root
+      .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+        include ./partials/sidenav.pug
+        #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+          // begin:: Header
+          include ./partials/topnav.pug
+          #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+            // begin:: Content Head
+            include ./partials/header.pug
+            .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid
+              // Begin::Dashboard 3
+              // Begin::Row
+              .row
+                .col-lg-12.col-xl-12.col-md-12.col-sm-12
+                  span#treeViewCallId(style='display:none') #{treeViewCallId}
+                  // begin::Portlet
+                  .kt-portlet
+                    .kt-portlet__head
+                      .kt-portlet__head-label
+                        h3.kt-portlet__head-title
+                          | Team Data
+                    .kt-portlet__body
+                      #kt_tree_6.tree-demo
+                  // end::Portlet
+          include ./partials/footer.pug
+    // begin::Modal
+    #kt_modal_4.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+      .modal-dialog.modal-lg(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title Assign To 
+            button.close(type='button', data-dismiss='modal', aria-label='Close' id="clearModal")
+          .modal-body
+            span#changeAssignUser(style='display:none')
+            form
+              .form-group#assignRoleInput(style="display:none")
+                label Assign Role
+                select#assignRole.form-control
+                  option(value="") Select a role
+                  option(value="Admin") Admin
+                  option(value="Manager") Manager
+                  option(value="TeamLead") Team Lead
+                  option(value="Expert") Expert
+              .form-group
+                label Assign To
+                select#assignTo.form-control  
+          .modal-footer
+            button.btn.btn-secondary(type='button', data-dismiss='modal' ) Close
+            button.btn.btn-primary(type='button' onclick = "assignTo()") Assign
+    // end::Modal
+      
+    #kt_scrolltop.kt-scrolltop
+      i.fa.fa-arrow-up
+    script.
+      var KTAppOptions = {
+      "colors": {
+      "state": {
+      "brand": "#5d78ff",
+      "dark": "#282a3c",
+      "light": "#ffffff",
+      "primary": "#5867dd",
+      "success": "#34bfa3",
+      "info": "#36a3f7",
+      "warning": "#ffb822",
+      "danger": "#fd3995"
+      },
+      "base": {
+      "label": [
+      "#c5cbe3",
+      "#a1a8c3",
+      "#3d4465",
+      "#3e4466"
+      ],
+      "shape": [
+      "#f0f3ff",
+      "#d9dffa",
+      "#afb4d4",
+      "#646c9a"
+      ]
+      }
+      }
+      };
+    // end::Global Config
+    // begin::Global Theme Bundle(used by all pages)
+    script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+    script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+    // end::Global Theme Bundle
+    // begin::Page Vendors(used by this page)
+    
+    // end::Page Vendors
+    // begin::Page Scripts(used by this page)
+    script(src="/assets/js/pages/dashboard.js" type="text/javascript")
+    script(src="/assets/plugins/custom/jstree/jstree.bundle.js" type="text/javascript")
+    script(src="/rpanel/js/su/team.js" type="text/javascript")
+    

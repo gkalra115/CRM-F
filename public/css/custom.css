@@ -1,0 +1,295 @@
+/* ---------------------------------------------------------------- Custom CSS Add all your Custom Styled CSS here for New Styles or Overwriting Default Theme Styles for Better Handling Updates -----------------------------------------------------------------*/
+ @-webkit-keyframes fadeInUp {
+     from {
+         opacity: 0;
+         -webkit-transform: translate3d(0, 70px, 0);
+         transform: translate3d(0, 70px, 0);
+    }
+}
+ @keyframes fadeInUp {
+     from {
+         opacity: 0;
+         -webkit-transform: translate3d(0, 70px, 0);
+         transform: translate3d(0, 70px, 0);
+    }
+}
+ .font-secondary {
+     font-family: 'Roboto', sans-serif !important;
+}
+ .floating-contact-wrap {
+     position: fixed;
+     right: 50px;
+     bottom: 60px;
+     z-index: 299;
+     -webkit-transition: right .2s ease;
+     -o-transition: right .2s ease;
+     transition: right .2s ease;
+}
+ .stretched .floating-contact-wrap + #gotoTop {
+     bottom: 100px;
+}
+ .floating-contact-wrap .floating-contact-btn {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 60px;
+     height: 60px;
+     border-radius: 60px;
+     background-color: #1ABC9C;
+     color: #FFF;
+     cursor: pointer;
+     z-index: 3;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     transition: transform .3s ease;
+}
+ .floating-contact-wrap .floating-contact-btn:hover, .floating-contact-wrap.active .floating-contact-btn {
+     -webkit-transform: translate(-50%, -50%) scale(1.1);
+     transform: translate(-50%, -50%) scale(1.1);
+     background-color: #222;
+}
+ .floating-contact-wrap .floating-contact-btn .floating-contact-icon {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     font-size: 22px;
+     -webkit-transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+     transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+     -webkit-transition-property: opacity, -webkit-transform;
+     transition-property: opacity, transform;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     -webkit-backface-visibility: hidden;
+}
+ .floating-contact-wrap .floating-contact-btn .floating-contact-icon.btn-active, .floating-contact-wrap.active .floating-contact-btn .floating-contact-icon {
+     opacity: 0;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+}
+ .floating-contact-wrap.active .floating-contact-btn .floating-contact-icon.btn-active {
+     opacity: 1;
+     -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+     transform: translate(-50%, -50%) rotate(-45deg);
+}
+ .floating-contact-wrap .floating-contact-box {
+     opacity: 0;
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     width: 380px;
+     background-color: #fff;
+     border-radius: 6px;
+     z-index: 1;
+     -webkit-transform-origin: right bottom;
+     transform-origin: right bottom;
+     box-shadow: 0px 0px 13px 3px rgba(0,0,0,0.07);
+     -webkit-transform: scale(.01);
+     transform: scale(.01);
+     -webkit-transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+     transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+     -webkit-backface-visibility: hidden;
+}
+ .floating-contact-wrap.active .floating-contact-box {
+     opacity: 1;
+     -webkit-transform: scale(1);
+     transform: scale(1);
+}
+ @media (max-width: 767.98px) {
+     .floating-contact-wrap .floating-contact-box {
+         width: 340px;
+    }
+}
+ .css3-spinner {
+     background-color: rgba(255, 255, 255, 0.8) 
+}
+ #floating-contact-submitted, .floating-contact-success #floating-contact, .floating-contact-success .floating-contact-heading, body:not(.floating-contact-processing) .floating-contact-loader {
+     display: none;
+}
+ .floating-contact-success #floating-contact-submitted {
+     display: block;
+}
+ .block-tab-2 ul.tab-nav:not(.tab-nav-lg) {
+     border-bottom: none;
+}
+ .block-tab-2 ul.tab-nav:not(.tab-nav-lg) li {
+     float: left;
+     border: 0;
+     height: auto;
+     text-align: center;
+}
+ .block-tab-2.tabs.tabs-alt ul.tab-nav li.ui-tabs-active a {
+     border: 0;
+}
+ .block-tab-2 ul.tab-nav:not(.tab-nav-lg) li a {
+     height: auto;
+     line-height: 1;
+     background-color: transparent;
+     font-size: 15px;
+     font-weight: 400;
+     padding: 0 0 20px 0;
+}
+ .block-tab-2 ul.tab-nav:not(.tab-nav-lg) li a i {
+     display: block;
+     font-size: 42px;
+     margin: 0 0 17px 0;
+}
+ .block-tab-2 ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
+     top: 0;
+}
+ .block-tab-2 ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active i {
+     color: var(--danger, #dc3545);
+}
+ .block-tab-2 ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a::after {
+     content: '';
+     position: absolute;
+     width: 6px;
+     height: 6px;
+     bottom: 0;
+     left: 50%;
+     margin-left: -3px;
+     border-radius: 50%;
+     background: var(--danger, #dc3545);
+}
+ .loader{
+     position: absolute;
+     top:0px;
+     right:0px;
+     width:100%;
+     height:100%;
+     background-color:#eceaea;
+     background-image:url('https://www.5balloons.info/wp-content/uploads/2020/05/ajax-loader.gif');
+     background-size: 50px;
+     background-repeat:no-repeat;
+     background-position:center;
+     z-index:10000000;
+     opacity: 0.4;
+     filter: alpha(opacity=40);
+}
+ .loader1{
+     position: absolute;
+     top:0px;
+     right:0px;
+     width:100%;
+     height:100%;
+     background-color:#eceaea;
+     background-image:url('https://www.5balloons.info/wp-content/uploads/2020/05/ajax-loader.gif');
+     background-size: 50px;
+     background-repeat:no-repeat;
+     background-position:center;
+     z-index:10000000;
+     opacity: 0.4;
+     filter: alpha(opacity=40);
+}
+ .grid-filter.flex-column {
+     border: 1px solid rgba(0,0,0,0.07);
+     border-radius: 4px;
+}
+ .grid-filter.flex-column, .grid-filter.flex-column li {
+     width: 100%;
+}
+ .grid-filter.flex-column li a {
+     padding: 14px 20px;
+     font-size: 0.9375rem;
+     text-align: left;
+     border-left: 0;
+     border-radius: 0;
+     border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+ .grid-filter.flex-column li:first-child a {
+     border-radius: 4px 4px 0 0;
+}
+ .grid-filter.flex-column li:last-child a {
+     border-bottom: 0;
+     border-radius: 0 0 4px 4px;
+}
+ .block-pricing-10 .pricing-title {
+     transform: translateY(-50%);
+     margin: 0 auto;
+     display: inline-block;
+     width: auto;
+     padding: 0 16px;
+}
+ .block-pricing-10 .btn-action {
+     transform: translateY(50%);
+}
+ .block-testimonials-3, .block-testimonials-3 h1, .block-testimonials-3 h2, .block-testimonials-3 h3, .block-testimonials-3 h4, .block-testimonials-3 h5, .block-testimonials-3 h6, .block-testimonials-3 p, .block-testimonials-3 a {
+     font-family: 'Inter', sans-serif !important;
+}
+ .block-testimonials-3 .swiper-slide {
+     width: 400px;
+     padding: 15px;
+}
+ .block-testimonials-3 .testimonial-col {
+     border: 1px solid #EEE;
+     border-radius: 4px;
+     padding: 30px;
+     margin-bottom: 30px;
+     box-shadow: 0 4px 10px 0 rgba(0,0,0,.05);
+}
+ .block-testimonials-3 .testimonial-col p {
+     font-size: 16px;
+     line-height: 26px !important;
+     margin-bottom: 20px;
+}
+ .block-testimonials-3 .swiper-container-horizontal>.swiper-scrollbar {
+     width: 75%;
+     max-width: 700px;
+     left: 50%;
+     transform: translateX(-50%);
+     background: rgba(0,0,0,.06);
+}
+ .block-testimonials-3 .swiper-container, .block-testimonials-3 .swiper-wrapper {
+     cursor: ew-resize !important;
+}
+ @media (min-width: 768px) {
+     .feature-box-border-horizontal .feature-box {
+         position: relative;
+    }
+     .feature-box-border-horizontal .feature-box:not(.noborder) .fbox-icon::before, .feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder) .fbox-icon::after {
+         content: "";
+         position: absolute;
+         top: 31px;
+         left: calc(50% + 32px);
+         width: calc(100% - 64px);
+         height: 2px;
+         border: 1px solid #EEE;
+         z-index: 0;
+    }
+     .feature-box-border-horizontal.border-dashed .feature-box:not(.noborder) .fbox-icon::before, .feature-box-border-horizontal.border-dashed.border-hover-animate .feature-box:not(.noborder) .fbox-icon::after {
+         border-style: dashed;
+    }
+     .feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder) .fbox-icon::after {
+         display: block;
+         border-color: #222;
+         width: 0;
+         transform-origin: top left;
+         transition: width .3s ease-in-out;
+    }
+    /* .feature-box-border-horizontal .feature-box:not(.noborder):nth-child(1) .fbox-icon::before {
+         background-color: #222;
+    }
+     */
+     .feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder):hover .fbox-icon::after {
+         width: calc(100% - 64px);
+    }
+     .feature-box-border-horizontal .fbox-icon i, .feature-box-border-horizontal .fbox-border.fbox-light .fbox-icon i {
+         line-height: 60px;
+         font-size: 24px;
+         z-index: 1;
+         text-align: center;
+         box-shadow: 0 0 0px 10px #FFF;
+    }
+     .feature-box-border-horizontal .feature-box.flex-column:not(.noborder) .fbox-icon::before, .feature-box-border-horizontal.border-hover-animate .feature-box.flex-column:not(.noborder) .fbox-icon::after {
+         left: calc(0% + 88px);
+    }
+}
+ .dark .feature-box-border-horizontal .feature-box:not(.noborder) .fbox-icon::before, .dark .feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder) .fbox-icon::after {
+     border-color: rgba(255,255,255,0.1);
+}
+ .dark .feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder) .fbox-icon::after {
+     border-color: rgba(255,255,255,0.6);
+}
+ .dark .feature-box-border-horizontal .fbox-icon i, .dark .feature-box-border-horizontal .fbox-border.fbox-light .fbox-icon i {
+     box-shadow: 0 0 0px 8px #0E2A47;
+     background-color: #0b1e31;
+}

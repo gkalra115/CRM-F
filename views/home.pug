@@ -1,0 +1,547 @@
+doctype html
+html.wide.wow-animation(lang='en')
+  head(style='background-image: url(images/14.jpg);')
+    title Requin Solutions
+    meta(name='format-detection', content='telephone=no')
+    meta(name='viewport', content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(charset='utf-8')
+    link(rel='icon', href='images/requine.png', type='image/x-icon')
+    // Stylesheets
+    link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Poppins:400,500,600%7CTeko:300,400,500%7CMaven+Pro:500')
+    link(rel='stylesheet', href='css/bootstrap.css')
+    link(rel='stylesheet', href='css/fonts.css')
+    link(rel='stylesheet', href='css/style.css')
+    style.
+      .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+  body(style='background-image: url(images/14.jpg);')
+    .ie-panel
+      a(href='images/requine.png')
+        img(src='images/requine.png', alt='You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.', width='820', height='42')
+    .preloader
+      .preloader-body
+        .cssload-container
+          span
+          span
+          span
+          span
+    .page
+      #home
+        header.section.page-header(style='background-color: black;')
+          // RD Navbar
+          .rd-navbar-wrap
+            nav.rd-navbar.rd-navbar-classic(data-layout='rd-navbar-fixed', data-sm-layout='rd-navbar-fixed', data-md-layout='rd-navbar-fixed', data-md-device-layout='rd-navbar-fixed', data-lg-layout='rd-navbar-static', data-lg-device-layout='rd-navbar-fixed', data-xl-layout='rd-navbar-static', data-xl-device-layout='rd-navbar-static', data-xxl-layout='rd-navbar-static', data-xxl-device-layout='rd-navbar-static', data-lg-stick-up-offset='46px', data-xl-stick-up-offset='46px', data-xxl-stick-up-offset='46px', data-lg-stick-up='true', data-xl-stick-up='true', data-xxl-stick-up='true')
+              .rd-navbar-main-outer
+                .rd-navbar-main
+                  // RD Navbar Panel
+                  .rd-navbar-panel
+                    // RD Navbar Toggle
+                    button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+                      span
+                    // RD Navbar Brand
+                    .rd-navbar-brand
+                      a.brand(href='/')
+                        img(src='images/requine.png', alt='', width='800', height='100')
+                  .rd-navbar-main-element
+                    .rd-navbar-nav-wrap
+                      // RD Navbar Share
+                      .rd-navbar-share.fl-bigmug-line-share27(data-rd-navbar-toggle='.rd-navbar-share-list')
+                        ul.list-inline.rd-navbar-share-list
+                          li.rd-navbar-share-list-item
+                            a.icon.fa.fa-facebook(href='#')
+                          li.rd-navbar-share-list-item
+                            a.icon.fa.fa-twitter(href='#')
+                          li.rd-navbar-share-list-item
+                            a.icon.fa.fa-google-plus(href='#')
+                          li.rd-navbar-share-list-item
+                            a.icon.fa.fa-instagram(href='#')
+                      ul.rd-navbar-nav
+                        li.rd-nav-item.active
+                          a.rd-nav-link(href='#home') Home
+                        li.rd-nav-item
+                          a.rd-nav-link(href='#services') Services
+                        li.rd-nav-item
+                          a.rd-nav-link(href='#projects') Projects
+                        li.rd-nav-item
+                          a.rd-nav-link(href='#team') Team
+                        li.rd-nav-item
+                          a.rd-nav-link(href='#') Contacts
+                        li.rd-nav-item
+                          a.rd-nav-link(href='/privacy') Terms &amp; Conditions
+                        li.rd-nav-item
+                          a.rd-nav-link(href='/events') Lifeee At Requin
+        // Swiper
+        section.section.swiper-container.swiper-slider.swiper-slider-classic(data-loop='true', data-autoplay='4859', data-simulate-touch='true', data-direction='vertical', data-nav='false')
+          .swiper-wrapper.text-center
+            .swiper-slide(data-slide-bg='images/12.jpg')
+              .swiper-slide-caption.section-md
+                .container
+                  h1(data-caption-animate='fadeInLeft', data-caption-delay='0') REIMAGINE
+                  p.text-width-large(data-caption-animate='fadeInright', data-caption-delay='100') The Scope Of Development.
+                  a.button.button-primary.button-ujarak(href='#modalCta', data-toggle='modal', data-caption-animate='fadeInUp', data-caption-delay='200') Get in touch
+            .swiper-slide(data-slide-bg='images/2.jpg')
+              .swiper-slide-caption.section-md
+                .container
+                  h1(data-caption-animate='fadeInLeft', data-caption-delay='0') BE , REQUIN
+                  p.text-width-large(data-caption-animate='fadeInRight', data-caption-delay='100') Explore The Tech.
+                  a.button.button-primary.button-ujarak(href='#modalCta', data-toggle='modal', data-caption-animate='fadeInUp', data-caption-delay='200') Get in touch
+            .swiper-slide(data-slide-bg='images/13.jpg')
+              .swiper-slide-caption.section-md
+                .container
+                  h1(data-caption-animate='fadeInLeft', data-caption-delay='0') REINVENT
+                  p.text-width-large(data-caption-animate='fadeInRight', data-caption-delay='100')
+                  a.button.button-primary.button-ujarak(href='#modalCta', data-toggle='modal', data-caption-animate='fadeInUp', data-caption-delay='200') Get in touch
+          // Swiper Pagination
+          .swiper-pagination__module
+            .swiper-pagination__fraction
+              span.swiper-pagination__fraction-index 00
+              span.swiper-pagination__fraction-divider /
+              span.swiper-pagination__fraction-count 00
+            .swiper-pagination__divider
+            .swiper-pagination
+      // See all services
+      section#services.section.section-sm.section-first.bg-default.text-center(style='background-image: url(images/background.jpg);')
+        .container
+          .row.row-30.justify-content-center
+            .col-md-7.col-lg-5.col-xl-6.text-lg-left.wow.fadeInUp
+              img(src='images/procreator.jpg', alt='', width='415', height='592')
+            .col-lg-7.col-xl-6
+              .row.row-30
+                .col-sm-6.wow.fadeInRight
+                  article.box-icon-modern.box-icon-modern-custom
+                    div
+                      h3.box-icon-modern-big-title What We Offer
+                      .box-icon-modern-decor
+                      a.button.button-primary.button-ujarak(href='#') View All Services
+                .col-sm-6.wow.fadeInRight(data-wow-delay='.1s')
+                  article.box-icon-modern.box-icon-modern-2
+                    .box-icon-modern-icon.linearicons-phone-in-out
+                    h5.box-icon-modern-title
+                      a(href='#')
+                        | CORPORATE
+                        br
+                        | SOLUTIONS
+                    .box-icon-modern-decor
+                    p.box-icon-modern-text Need specific software for your company? We are ready to develop it!
+                .col-sm-6.wow.fadeInRight(data-wow-delay='.2s')
+                  article.box-icon-modern.box-icon-modern-2
+                    .box-icon-modern-icon.linearicons-headset
+                    h5.box-icon-modern-title
+                      a(href='#')
+                        | CALL CENTER
+                        br
+                        | SOLUTIONS
+                    .box-icon-modern-decor
+                    p.box-icon-modern-text Our experts provide custom products of any complexity for call centers.
+                .col-sm-6.wow.fadeInRight(data-wow-delay='.3s')
+                  article.box-icon-modern.box-icon-modern-2
+                    .box-icon-modern-icon.linearicons-outbox
+                    h5.box-icon-modern-title
+                      a(href='#')
+                        | CLOUD
+                        br
+                        | DEVELOPMENT
+                    .box-icon-modern-decor
+                    p.box-icon-modern-text We can also offer you reliable cloud development solutions.
+      // Cta
+      section.section.section-fluid.bg-default(style='background-image: url(images/background.jpg);')
+        .parallax-container(data-parallax-img='images/computer.jpg')
+          .parallax-content.section-xl.context-dark.bg-overlay-68.bg-mobile-overlay
+            .container
+              .row.row-30.justify-content-end.text-right
+                .col-sm-7
+                  h3.wow.fadeInLeft Let&apos;s Develop Your Next Great App!
+                  p
+                    | Do you need a unique software solution for your company? We know how to help you!
+                  .group-sm.group-middle.group.justify-content-end
+                    a.button.button-primary.button-ujarak(href='#modalCta', data-toggle='modal') Get in Touch
+                    a.button.button-white-outline.button-ujarak(href='#') Learn More
+      // Latest Projects
+      section#projects.section.section-sm.section-fluid.bg-default.text-center(style='background-image: url(images/background.jpg);')
+        .container-flui.d
+          h2.wow.fadeInLeft Latest Projects
+          p.quote-jean.wow.fadeInRight(data-wow-delay='.1s')
+            | In our portfolio, you can browse the latest products developed for our clients for different corporate purposes. Our qualified team of interface designers and software developers is always ready to create something unique for you.
+          .isotope-filters.isotope-filters-horizontal
+            button.isotope-filters-toggle.button.button-md.button-icon.button-icon-right.button-default-outline.button-wapasha(data-custom-toggle='#isotope-3', data-custom-toggle-hide-on-blur='true', data-custom-toggle-disable-on-blur='true')
+              span.icon.fa.fa-caret-down
+              | Filter
+            ul#isotope-3.isotope-filters-list
+              li
+                a.active(href='#', data-isotope-filter='*', data-isotope-group='gallery') All
+              li
+                a(href='#', data-isotope-filter='Type 1', data-isotope-group='gallery') mobile Apps
+              li
+                a(href='#', data-isotope-filter='Type 2', data-isotope-group='gallery') Custom Software
+              li
+                a(href='#', data-isotope-filter='Type 3', data-isotope-group='gallery') QA &amp; Testing
+              li
+                a(href='#', data-isotope-filter='Type 4', data-isotope-group='gallery') UX and Design
+          .row.row-30.isotope(data-isotope-layout='fitRows', data-isotope-group='gallery', data-lightgallery='group')
+            .col-sm-6.col-lg-4.col-xxl-3.isotope-item.wow.fadeInRight(data-filter='Type 4')
+              // Thumbnail Classic
+              article.thumbnail.thumbnail-classic.thumbnail-md
+                .thumbnail-classic-figure
+                  img.content(src='images/content.jpg', alt='')
+                .thumbnail-classic-caption
+                  .thumbnail-classic-title-wrap
+                    a.icon.fl-bigmug-line-zoom60(href='images/grid-gallery-1-1200x800-original.jpg', data-lightgallery='item')
+                      img(src='images/fullwidth-gallery-1-420x350.jpg', alt='')
+                    h5.thumbnail-classic-title
+                      a(href='#') content writing
+                  p.thumbnail-classic-text
+                    | We provide the best assessment service and research project works to the clients and helping them out in their research work problems. We also provide the report modals and research paper works to our clients so that they can easily get their required job done by getting the referenced documents that we provide.
+            .col-sm-6.col-lg-4.col-xxl-3.isotope-item.wow.fadeInRight(data-filter='Type 1', data-wow-delay='.1s')
+              // Thumbnail Classic
+              article.thumbnail.thumbnail-classic.thumbnail-md
+                .thumbnail-classic-figure
+                  img(src='images/software.jpg')
+                .thumbnail-classic-caption
+                  .thumbnail-classic-title-wrap
+                    a.icon.fl-bigmug-line-zoom60(style='margin-top: 20px;', href='images/grid-gallery-2-1200x800-original.jpg', data-lightgallery='item')
+                      img(src='images/fullwidth-gallery-2-420x350.jpg', alt='')
+                    h5.thumbnail-classic-title(style='margin-top: 1  5px;')
+                      a(href='#') software development
+                  p.thumbnail-classic-text(style='text-align: justify;')
+                    | We &quot;a team of professionals&quot; provide the software solutions and development touching various fields including: Java, Python, C, C++ also with various tools and embedded software for developing and deploying software as recommended by clients. We provide better infrastructure for developing the software and getting the needs according to clients.
+            .col-sm-6.col-lg-4.col-xxl-3.isotope-item.wow.fadeInRight(data-filter='Type 2', data-wow-delay='.2s')
+              // Thumbnail Classic
+              article.thumbnail.thumbnail-classic.thumbnail-md
+                .thumbnail-classic-figure
+                  img(src='images/Android-Development.jpg', alt='')
+                .thumbnail-classic-caption
+                  .thumbnail-classic-title-wrap
+                    a.icon.fl-bigmug-line-zoom60(href='images/grid-gallery-3-1200x800-original.jpg', data-lightgallery='item')
+                      img(src='images/fullwidth-gallery-3-420x350.jpg', alt='', width='420', height='350')
+                    h5.thumbnail-classic-title
+                      a(href='#') Android development
+                  p.thumbnail-classic-text
+                    | Android software development is the process by which applications are created for devices running the Android operating system.
+            .col-sm-6.col-lg-4.col-xxl-3.isotope-item.wow.fadeInRight(data-filter='Type 3', data-wow-delay='.3s')
+              // Thumbnail Classic
+              article.thumbnail.thumbnail-classic.thumbnail-md
+                .thumbnail-classic-figure
+                  img(src='images/game.jpg', alt='')
+                .thumbnail-classic-caption
+                  .thumbnail-classic-title-wrap
+                    a.icon.fl-bigmug-line-zoom60(href='images/grid-gallery-4-1200x800-original.jpg', data-lightgallery='item')
+                      img(src='images/fullwidth-gallery-4-420x350.jpg', alt='', width='420', height='350')
+                    h5.thumbnail-classic-title
+                      a(href='#') Game development
+                  p.thumbnail-classic-text
+                    | Requin not only focusses in web and software development but also indulges in the creation of many exciting games and their development. Our professionals use Unity tools for the creation of many exciting games. Other than that our clients are also interested in making and giving projects to us for game development.
+            .col-sm-6.col-lg-4.col-xxl-3.isotope-item.wow.fadeInLeft(data-filter='Type 3')
+              // Thumbnail Classic
+              article.thumbnail.thumbnail-classic.thumbnail-md
+                .thumbnail-classic-figure
+                  img(src='images/website-design-company.jpg', alt='')
+                .thumbnail-classic-caption
+                  .thumbnail-classic-title-wrap
+                    a.icon.fl-bigmug-line-zoom60(href='images/grid-gallery-5-1200x800-original.jpg', data-lightgallery='item')
+                      img(src='images/fullwidth-gallery-5-420x350.jpg', alt='', width='420', height='350')
+                    h5.thumbnail-classic-title
+                      a(href='#') Web design and development
+                  p.thumbnail-classic-text
+                    | Other than software development we also provide website development and deployment services to our clients. We deal with many technology for this type of development including: Django, PhP, Node.Js, Python, ReactJs and also deal with many others.
+            .col-sm-6.col-lg-4.col-xxl-3.isotope-item.wow.fadeInLeft(data-filter='Type 1', data-wow-delay='.1s')
+              // Thumbnail Classic
+              article.thumbnail.thumbnail-classic.thumbnail-md
+                .thumbnail-classic-figure
+                  img(src='images/acadmic.png', alt='')
+                .thumbnail-classic-caption
+                  .thumbnail-classic-title-wrap
+                    a.icon.fl-bigmug-line-zoom60(href='images/grid-gallery-6-1200x800-original.jpg', data-lightgallery='item')
+                      img(src='images/fullwidth-gallery-6-420x350.jpg', alt='', width='420', height='350')
+                    h5.thumbnail-classic-title
+                      a(href='#') Acadmic solutions
+                  p.thumbnail-classic-text
+                    | We in Requin not only focus on organizations but also on student who are facing problems in their academic careers. We help them in their project making and convey best results in their research work.
+            .col-sm-6.col-lg-4.col-xxl-3.isotope-item.wow.fadeInLeft(data-filter='Type 2', data-wow-delay='.2s')
+              // Thumbnail Classic
+              article.thumbnail.thumbnail-classic.thumbnail-md
+      // Years of experience
+      section.section.section-sm.bg-default(style='background-image: url(images/background.jpg);')
+        .container
+          .row.row-30.row-xl-24.justify-content-center.align-items-center.align-items-lg-start.text-left
+            .col-md-6.col-lg-5.col-xl-4.text-center
+              a.text-img(href='#')
+                #particles-js
+                span.counter 3
+            .col-sm-8.col-md-6.col-lg-5.col-xl-4
+              .text-width-extra-small.offset-top-lg-24.wow.fadeInUp
+                h3.title-decoration-lines-left Years of Experience
+                p.text-gray-500
+                  | RatherApp is a team of highly experienced app designers and developers creating unique software for you.
+                a.button.button-secondary.button-pipaluk(href='#') Get in touch
+            .col-sm-10.col-md-8.col-lg-6.col-xl-4.wow.fadeInRight(data-wow-delay='.1s')
+              .row.justify-content-center.border-2-column.offset-top-xl-26
+                .col-9.col-sm-6
+                  .counter-amy
+                    .counter-amy-number
+                      span.counter 2
+                      span.symbol k
+                    h6.counter-amy-title apps developed
+                .col-9.col-sm-6
+                  .counter-amy
+                    .counter-amy-number
+                      span.counter 40
+                    h6.counter-amy-title Consultants
+                .col-9.col-sm-6
+                  .counter-amy
+                    .counter-amy-number
+                      span.counter 12
+                    h6.counter-amy-title Awards won
+                .col-9.col-sm-6
+                  .counter-amy
+                    .counter-amy-number
+                      span.counter 160
+                    h6.counter-amy-title Employees
+            //
+              <div class="col-lg-6 col-xl-12 align-self-center">
+              <div class="row row-30 justify-content-center">
+              <div class="col-sm-6 col-md-5 col-lg-6 col-xl-3 wow fadeInLeft"><a class="clients-classic" href="#"><img src="images/mobileapp.jpg" alt="" width="270" height="117"/></a></div>
+              <div class="col-sm-6 col-md-5 col-lg-6 col-xl-3 wow fadeInLeft" data-wow-delay=".1s"><a class="clients-classic" href="#"><img src="images/4.jpg" alt="" width="270" height="117"/></a></div>
+              <div class="col-sm-6 col-md-5 col-lg-6 col-xl-3 wow fadeInLeft" data-wow-delay=".2s"><a class="clients-classic" href="#"><img src="images/8.jpg" alt="" width="270" height="117"/></a></div>
+              <div class="col-sm-6 col-md-5 col-lg-6 col-xl-3 wow fadeInLeft" data-wow-delay=".3s"><a class="clients-classic" href="#"><img src="images/6.jpg" alt="" width="270" height="117"/></a></div>
+              </div>
+              </div>
+      // Meet The Team
+      section#team.section.section-sm.section-fluid.bg-default(style='background-image: url(images/background.jpg);')
+        .container-fluid
+          h2 Meet The Team
+          .row.row-sm.row-30.justify-content-center
+            .col-md-6.col-lg-5.col-xl-3.wow.fadeInRight
+              // Team Classic
+              article.team-classic.team-classic-lg
+                a.team-classic-figure(href='#')
+                  img(src='images/dilip.jpg', alt='', width='420', height='424')
+                .team-classic-caption
+                  h4.team-classic-name
+                    a(href='#') Dilip jain
+                  p.team-classic-status founder of Requin
+            .col-md-6.col-lg-5.col-xl-3.wow.fadeInRight(data-wow-delay='.1s')
+              // Team Classic
+              article.team-classic.team-classic-lg
+                a.team-classic-figure(href='#')
+                  img(src='images/shivam.jpg', alt='')
+                .team-classic-caption
+                  h4.team-classic-name
+                    a(href='#') shivam khandelwal
+                  p.team-classic-status Manager of non- Technical department
+            .col-md-6.col-lg-5.col-xl-3.wow.fadeInRight(data-wow-delay='.2s')
+              // Team Classic
+              article.team-classic.team-classic-lg
+                a.team-classic-figure(href='#')
+                  img(src='images/joyal.jpg', alt='', width='420px', height='424px')
+                .team-classic-caption
+                  h4.team-classic-name joyal
+                  p.team-classic-status Manager of technical department
+            .col-md-6.col-lg-5.col-xl-3.wow.fadeInRight(data-wow-delay='.3s')
+              // Team Classic
+              article.team-classic.team-classic-lg
+                a.team-classic-figure(href='#')
+                  img(src='images/shweta.jpg', alt='', width='420', height='424')
+                .team-classic-caption
+                  h4.team-classic-name
+                    a(href='#') shweta
+                  p.team-classic-status Software Developer
+      // out of this in backup.html
+      // Pricing
+      section.section.section-sm.section-bottom-70.section-fluid.bg-default(style='background-image: url(images/background.jpg);')
+        .container
+          h2 Pricing
+          .row.row-30.justify-content-center
+            .col-md-6.col-lg-5.col-xl-4
+              .box-pricing.box-pricing-black
+                .box-pricing-body
+                  h5.box-pricing-title basic
+                  h3.box-pricing-price $500.00
+                  .box-pricing-time starting at
+                  .box-pricing-divider
+                    .divider
+                    span Basic
+                  ul.box-pricing-list
+                    li.active Concept development
+                    li.active UI design
+                    li Configuration management
+                    li Software quality assurance
+                    li App integration
+                .box-pricing-button
+                  a.button.button-lg.button-block.button-gray-4(href='#') Get started
+            .col-md-6.col-lg-5.col-xl-4
+              .box-pricing.box-pricing-black.box-pricing-popular
+                .box-pricing-body
+                  h5.box-pricing-title Optimal
+                  h3.box-pricing-price $800.00
+                  .box-pricing-time starting at
+                  .box-pricing-divider
+                    .divider
+                    span Optimal
+                  ul.box-pricing-list
+                    li.active Concept development
+                    li.active UI design
+                    li.active Configuration management
+                    li.active Software quality assurance
+                    li App integration
+                .box-pricing-button
+                  a.button.button-lg.button-block.button-primary(href='#') Get started
+                .box-pricing-badge popular
+            .col-md-6.col-lg-5.col-xl-4
+              .box-pricing.box-pricing-black
+                .box-pricing-body
+                  h5.box-pricing-title Ultimate
+                  h3.box-pricing-price $1200.00
+                  .box-pricing-time starting at
+                  .box-pricing-divider
+                    .divider
+                    span Ultimate
+                  ul.box-pricing-list
+                    li.active Concept development
+                    li.active UI design
+                    li.active Configuration management
+                    li.active Software quality assurance
+                    li.active App integration
+                .box-pricing-button
+                  a.button.button-lg.button-block.button-gray-4(href='#') Get started
+      // out of this in backup.html
+      // Contact information
+      section.section.section-sm.bg-default(style='background-image: url(images/background.jpg);')
+        .container
+          .row.row-30.justify-content-center
+            .col-sm-8.col-md-6.col-lg-4
+              article.box-contacts
+                .box-contacts-body
+                  .box-contacts-icon.fl-bigmug-line-cellphone55
+                  .box-contacts-decor
+                  p.box-contacts-link
+                    a(href='tel:#') +91 - 7976084711 
+                  p.box-contacts-link
+                    a(href='tel:#') +91 - 8387934095
+            .col-sm-8.col-md-6.col-lg-4
+              article.box-contacts
+                .box-contacts-body
+                  .box-contacts-icon.fl-bigmug-line-up104
+                  .box-contacts-decor
+                  p.box-contacts-link
+                    a(href='#') Plot no 670, 1st Floor , Sec-2 , Malviya nagar , Jaipur . Rajasthan (302017)
+            .col-sm-8.col-md-6.col-lg-4
+              article.box-contacts
+                .box-contacts-body
+                  .box-contacts-icon.fl-bigmug-line-chat55
+                  .box-contacts-decor
+                  p.box-contacts-link
+                    a(href='mailto:#') Info@requinsolutions.com
+                  p.box-contacts-link
+                    a(href='mailto:#') Hr@requinsolutions.com
+      // Contact Form
+      section#contacts.section.section-sm.section-last.bg-default.text-left(style='background-image: url(images/background.jpg);')
+        .container
+          article.title-classic
+            .title-classic-title
+              h3 Get in touch
+            .title-classic-text
+              p
+                | If you have any questions, just fill in the contact form, and we will answer you shortly.
+          form.rd-form.rd-form-variant-2.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .row.row-14.gutters-14
+              .col-md-4
+                .form-wrap
+                  input#contact-your-name-2.form-input(type='text', name='name', data-constraints='@Required')
+                  label.form-label(for='contact-your-name-2') Your Name
+              .col-md-4
+                .form-wrap
+                  input#contact-email-2.form-input(type='email', name='email', data-constraints='@Email @Required')
+                  label.form-label(for='contact-email-2') E-mail
+              .col-md-4
+                .form-wrap
+                  input#contact-phone-2.form-input(type='text', name='phone', data-constraints='@Numeric')
+                  label.form-label(for='contact-phone-2') Phone
+              .col-12
+                .form-wrap
+                  label.form-label(for='contact-message-2') Message
+                  textarea#contact-message-2.form-input.textarea-lg(name='message', data-constraints='@Required')
+            button.button.button-primary.button-pipaluk(type='submit') Send Message
+      br
+      br
+      // RD Google Map
+      section.section.section-fluid
+        // Google Map
+        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.703110976086!2d75.8163574148513!3d26.84939368315485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db66c82889ff3%3A0x84819a30be0867b1!2sRequin%20solutions%20pvt.%20ltd!5e0!3m2!1sen!2sin!4v1673590511141!5m2!1sen!2sin', style='border:0;', allowfullscreen='', loading='lazy', referrerpolicy='no-referrer-when-downgrade', width='1300', height='400')
+        br
+        br
+        // Page Footer
+        footer.section.section-fluid.footer-minimal.context-dark
+          .bg-gray-15
+            .container-fluid
+              .footer-minimal-inset.oh
+                ul.footer-list-category-2
+                  li
+                    a(href='#') CONTENT writing
+                  li
+                    a(href='#') Software Development
+                  li
+                    a(href='#') Android Development 
+                  li
+                    a(href='#') Web design and development
+                  li
+                    a(href='#') Acadmic solutions
+              .footer-minimal-bottom-panel.text-sm-left
+                .row.row-10.align-items-md-center
+                  .col-sm-6.col-md-4.text-sm-right.text-md-center
+                    div
+                      ul.list-inline.list-inline-sm.footer-social-list-2
+                        li
+                          a.icon.fa.fa-facebook(href='#')
+                        li
+                          a.icon.fa.fa-twitter(href='#')
+                        li
+                          a.icon.fa.fa-google-plus(href='#')
+                        li
+                          a.icon.fa.fa-instagram(href='#')
+                  .col-sm-6.col-md-4.order-sm-first
+                    // Rights
+                    p.rights
+                      span &copy;&nbsp;
+                      span.copyright-year
+                      |  
+                      span REQUIN
+                  .col-sm-6.col-md-4.text-md-right
+                    span All rights reserved.
+                    |  
+                    span
+                      | Design&nbsp;by&nbsp;
+                      a(href='#') Requin Solutions
+                    br
+        #modalCta.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+          .modal-dialog(role='document')
+            .modal-content
+              .modal-header
+                h4 Contact Us
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+              .modal-body
+                form.rd-form.rd-form-variant-2.rd-mailform(data-form-output='form-output-global', data-form-type='contact-modal', method='post', action='bat/rd-mailform.php')
+                  .row.row-14.gutters-14
+                    .col-12
+                      .form-wrap
+                        input#contact-modal-name.form-input(type='text', name='name', data-constraints='@Required')
+                        label.form-label(for='contact-modal-name') Your Name
+                    .col-12
+                      .form-wrap
+                        input#contact-modal-email.form-input(type='email', name='email', data-constraints='@Email @Required')
+                        label.form-label(for='contact-modal-email') E-mail
+                    .col-12
+                      .form-wrap
+                        input#contact-modal-phone.form-input(type='text', name='phone', data-constraints='@Numeric')
+                        label.form-label(for='contact-modal-phone') Phone
+                    .col-12
+                      .form-wrap
+                        label.form-label(for='contact-modal-message') Message
+                        textarea#contact-modal-message.form-input.textarea-lg(name='message', data-constraints='@Required')
+                  button.button.button-primary.button-pipaluk(type='submit') Send Message
+    // Global Mailform Output
+    #form-output-global.snackbars
+    // Javascript
+    script(src='js/core.min.js')
+    script(src='js/script.js')
+    // coded by Himic

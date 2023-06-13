@@ -1,0 +1,83 @@
+doctype html
+html(dir='ltr', lang='en-US')
+  include ./partials/head.pug
+  body.stretched
+    #wrapper.clearfix
+      include ./partials/topnav.pug      
+      section#content
+        .content-wrap
+          .container.clearfix
+            .row.justify-content-center.gutter-50.col-mb-50
+              .col-xl-6.col-lg-8.text-center
+                h3.h1.fw-bold.mb-3
+                  | What You Get in 
+                  span(style="color:#7ac3ff;") Squalo
+                  | ?
+                p.text-larger.text-muted
+                  | Our most powerful tools for your exact need. Powered by transformer models.
+              //.row
+                .col-md-3.mb-5.mb-sm-0.text-center
+                  .rounded-skill.mb-0(data-color='#DD4B39' data-size='200' data-percent='70' data-width='3' data-speed='2500') 
+                    | 2650
+                    br
+                    | Words created
+                .col-md-3.mb-5.mb-sm-0.text-center
+                  .rounded-skill.mb-0(data-color='#3F729B' data-size='200' data-percent='30' data-width='3' data-speed='6500')
+                    .counter.counter-inherit
+                      span(data-from='1' data-to='30' data-refresh-interval='50' data-speed='6000')
+                      | 5678
+                      br
+                      | Leadership Rank
+                .col-md-3.mb-5.mb-sm-0.text-center
+                  .rounded-skill.mb-0(data-color='#3F729B' data-size='200' data-percent='85' data-width='3' data-speed='6500')
+                    .counter.counter-inherit
+                      span(data-from='1' data-to='85' data-refresh-interval='50' data-speed='6000')
+                      | %
+                .col-md-3.mb-5.mb-sm-0.text-center
+                  .rounded-skill.mb-0(data-color='#3F729B' data-size='200' data-percent='85' data-width='3' data-speed='6500')
+                    .counter.counter-inherit
+                      span(data-from='1' data-to='85' data-refresh-interval='50' data-speed='6000')
+                      | %
+              .clear
+              .col-lg-3.col-sm-6
+                a(href='/cl/askme')
+                  .feature-box.fbox-effect.flex-column.border.p-4.rounded-3
+                    .fbox-icon.mb-4
+                        img.bg-transparent.rounded-0(src='/demos/seo/images/icons/globe.svg', alt='Feature Icon')
+                    .fbox-content
+                      h3 Content Creator
+                      p
+                        | Looking to add some extra flair to your content? With TheSqualo content creator tool, you can easily create engaging, eye-catching content that will make your readers sit up and take notice!
+              .col-lg-3.col-sm-6
+                .feature-box.fbox-effect.flex-column.border.p-4.rounded-3
+                  a(href='/cl/code')
+                    .fbox-icon.mb-4
+                        img.bg-transparent.rounded-0(src='/demos/seo/images/icons/social.svg', alt='Feature Icon')
+                    .fbox-content
+                      h3 Code creator
+                      p
+                        | This is the perfect tool for any coder looking to create clean, efficient code. With its easy-to-use interface and powerful code-creation capabilities, it makes coding faster and easier than ever before!
+              .col-lg-3.col-sm-6
+                .feature-box.fbox-effect.flex-column.border.p-4.rounded-3
+                  a(href='/cl/soon') 
+                    .fbox-icon.mb-4
+                        img.bg-transparent.rounded-0(src='/demos/seo/images/icons/analysis.svg', alt='Feature Icon')
+                    .fbox-content
+                      h3 Email Creator
+                      p
+                        | With Thesqualo Email Creator, you can quickly and easily create beautiful, responsive emails that look great on any device. Plus, our easy-to-use drag-and-drop interface makes creating emails a breeze!
+              .col-lg-3.col-sm-6
+                a(href='/cl/soon')
+                  .feature-box.fbox-effect.flex-column.border.p-4.rounded-3
+                    .fbox-icon.mb-4
+                        img.bg-transparent.rounded-0(src='/demos/seo/images/icons/experience.svg', alt='Feature Icon')
+                    .fbox-content
+                      h3 Recipe creator
+                      p
+                        | With this, you can easily and quickly create recipes that you dare to eat. With our easy-to-use tools, you'll be able to whip up amazing dishes in no time, and impress your friends and family with your culinary creations.
+                            
+    #gotoTop.icon-angle-up
+    script(src='/js/jquery.js')
+    script(src='/js/plugins.min.js')
+    script(src='/js/functions.js')
+    script(src="/rpanel/js/client/logout.js" type="text/javascript")

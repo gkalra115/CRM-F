@@ -1,0 +1,266 @@
+doctype html
+html(lang="en")
+  include ./partials/head.pug
+  style.
+    #kt_dropzone_4 .dropzone-progress{
+    display : none !important;
+    }
+    #kt_dropzone_4 .dropzone-toolbar .dropzone-start{
+    display : none !important;
+    }
+  body.kt-quick-panel--right.kt-demo-panel--right.kt-offcanvas-panel--right.kt-header--fixed.kt-header-mobile--fixed.kt-subheader--enabled.kt-subheader--fixed.kt-subheader--solid.kt-aside--enabled.kt-aside--fixed.kt-page--loading.overlayloader
+    // begin:: Page
+    // begin:: Header Mobile
+    #kt_header_mobile.kt-header-mobile.kt-header-mobile--fixed
+      .kt-header-mobile__logo
+        a(href="index.html")
+          img(alt="Logo" src="/assets/media/logos/logo-dark.png")
+      .kt-header-mobile__toolbar
+        button#kt_aside_mobile_toggler.kt-header-mobile__toggler.kt-header-mobile__toggler--left
+          span
+        button#kt_header_mobile_toggler.kt-header-mobile__toggler
+          span
+        button#kt_header_mobile_topbar_toggler.kt-header-mobile__topbar-toggler
+          i.flaticon-more
+    // end:: Header Mobile
+    .kt-grid.kt-grid--hor.kt-grid--root
+      .kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--ver.kt-page
+        include ./partials/sidenav.pug
+        #kt_wrapper.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor.kt-wrapper
+          // begin:: Header
+          include ./partials/topnav.pug
+          #kt_content.kt-content.kt-grid__item.kt-grid__item--fluid.kt-grid.kt-grid--hor
+            // begin:: Content Head
+            include ./partials/header.pug
+            .kt-container.kt-container--fluid.kt-grid__item.kt-grid__item--fluid
+              // Begin::Dashboard 3
+              // Begin::Row
+              .kt-portlet
+                .kt-portlet__body.kt-portlet__body--fit
+                  .row.row-no-padding.row-col-separator-lg
+                    .col-md-12.col-lg-4.col-xl-4
+                      // begin::Total Profit
+                      .kt-widget24
+                        .kt-widget24__details
+                          .kt-widget24__info
+                            h4.kt-widget24__title
+                              | Total Task
+                            a(href='/ex/all')
+                              span.kt-widget24__desc
+                                | Click here for all task
+                          span.kt-widget24__stats.kt-font-danger
+                              span.kt-spinner.kt-spinner--sm.kt-spinner--danger.demo(style="margin-right : 20px")
+                              span#totaltask
+                    .col-md-12.col-lg-4.col-xl-4
+                      // begin::New Feedbacks
+                      .kt-widget24
+                        .kt-widget24__details
+                          .kt-widget24__info
+                            h4.kt-widget24__title
+                              | Delayed Task
+                            a(href='#addTable')
+                              span.kt-widget24__desc
+                                | Click here for all delayed task
+                          span.kt-widget24__stats.kt-font-success
+                              span.kt-spinner.kt-spinner--sm.kt-spinner--success.demo(style="margin-right : 20px")
+                              span#delayedTaskCount
+                    .col-md-12.col-lg-4.col-xl-4
+                      // begin::New Feedbacks
+                      .kt-widget24
+                        .kt-widget24__details
+                          .kt-widget24__info
+                            h4.kt-widget24__title
+                              | Running Task
+                            a(href='/ex/task')
+                              span.kt-widget24__desc
+                                | Click here for all task in progress
+                          span.kt-widget24__stats.kt-font-warning
+                            //span.kt-spinner.kt-spinner--sm.kt-spinner--warning.demo(style="margin-right : 20px")
+                            span#currenttask
+                div
+                div
+                div
+                div
+              .kt-portlet.kt-portlet--mobile
+                .kt-portlet__head
+                  .kt-portlet__head-label
+                    h3.kt-portlet__head-title
+                      | Task List
+                  .kt-portlet__head-toolbar
+                    .kt-portlet__head-wrapper
+                      button.btn.btn-brand.btn-icon-sm(data-toggle='modal' data-target='#kt_modal_7')
+                        i.flaticon2-plus
+                        | Add New
+                #addTable.kt-portlet__body(style="padding-top:0")
+                  ul.nav.nav-tabs.nav-tabs-line(role='tablist')
+                    li.nav-item
+                      a.nav-link.active(data-toggle='tab' href='#kt_tabs_1_1' role='tab') Un-Approved
+                    li.nav-item.dropdown
+                      a.nav-link(data-toggle='tab' href='#kt_tabs_1_2' role='tab') Approved
+                    li.nav-item
+                      a.nav-link(data-toggle='tab' href='#kt_tabs_1_3' role='tab') Rejected
+                  .tab-content
+                    #kt_tabs_1_1.tab-pane.active(role='tabpanel')
+                        .kt-form.kt-form--label-right.kt-margin-t-20.kt-margin-b-10
+                          .row.align-items-center
+                            .col-xl-12.order-2.order-xl-1
+                              .row.align-items-center
+                                .col-md-4.kt-margin-b-20-tablet-and-mobile
+                                  .kt-input-icon.kt-input-icon--left
+                                    input#generalSearch.form-control(type='text', placeholder='Search...')
+                                    span.kt-input-icon__icon.kt-input-icon__icon--left
+                                      span
+                                        i.la.la-search
+                        // begin: Datatable
+                        table#kt_table_4.table.table-striped-.table-bordered.table-hover.table-checkable
+                          thead
+                            tr
+                              th Title
+                              th Deadline
+                              th Created At
+                              th Status
+              
+                    #kt_tabs_1_2.tab-pane(role='tabpanel')
+                      .kt-form.kt-form--label-right.kt-margin-t-20.kt-margin-b-10
+                        .row.align-items-center
+                          .col-xl-12.order-2.order-xl-1
+                            .row.align-items-center
+                              .col-md-4.kt-margin-b-20-tablet-and-mobile
+                                .kt-input-icon.kt-input-icon--left
+                                  input#generalSearch1.form-control(type='text', placeholder='Search...')
+                                  span.kt-input-icon__icon.kt-input-icon__icon--left
+                                    span
+                                      i.la.la-search
+                      // begin: Datatable
+                      table#kt_table_3.table.table-striped-.table-bordered.table-hover.table-checkable
+                        thead
+                          tr
+                            th Title
+                            th Deadline
+                            th Created At
+                            th Status
+              
+                    #kt_tabs_1_3.tab-pane(role='tabpanel')
+                      .kt-form.kt-form--label-right.kt-margin-t-20.kt-margin-b-10
+                        .row.align-items-center
+                          .col-xl-12.order-2.order-xl-1
+                            .row.align-items-center
+                              .col-md-4.kt-margin-b-20-tablet-and-mobile
+                                .kt-input-icon.kt-input-icon--left
+                                  input#generalSearch2.form-control(type='text', placeholder='Search...')
+                                  span.kt-input-icon__icon.kt-input-icon__icon--left
+                                    span
+                                      i.la.la-search
+                      // begin: Datatable
+                      table#kt_table_5.table.table-striped-.table-bordered.table-hover.table-checkable
+                        thead
+                          tr
+                            th Title
+                            th Deadline
+                            th Created At
+                            th Status
+              
+          include ./partials/footer.pug
+          // begin::Modal
+          #kt_modal_7.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+            .modal-dialog.modal-lg(role='document')
+              .modal-content
+                .modal-header
+                  h5#modalTitle.modal-title Add a Task
+                  button.close(type='button' data-dismiss='modal' aria-label='Close')
+                .modal-body(class="kt-scroll" data-scroll="true" data-height="400")
+                  form#createOrder
+                    .form-group
+                      label.form-control-label(for='title') Title:
+                      input#title.form-control(type='text' name="title")
+                    .form-group
+                      label.form-control-label(for='wordcount') Wordcount:
+                      input#wordcount.form-control(type='number' name="wordcount")
+                    .form-group
+                      label.form-control-label(for='harddeadline') Hard Deadline:
+                      input#harddeadline.form-control.empjoindate(type='date' name="harddeadline")        
+                    .form-group
+                      label(for='description') Description
+                      .summernote#textdescription
+                    .form-group.row
+                      label.col-lg-3.col-form-label Brief Files:
+                      .col-lg-9
+                        #kt_dropzone_4.dropzone.dropzone-multi
+                          .dropzone-panel
+                            a.dropzone-select.btn.btn-label-brand.btn-bold.btn-sm Attach files
+                            a.dropzone-remove-all.btn.btn-label-brand.btn-bold.btn-sm Remove All
+                          .dropzone-items
+                            .dropzone-item(style='display:none')
+                              .dropzone-file
+                                .dropzone-filename(title='some_image_file_name.jpg')
+                                  span(data-dz-name='') some_image_file_name.jpg
+                                  strong
+                                    | (
+                                    span(data-dz-size='') 340kb
+                                    | )
+                                .dropzone-error(data-dz-errormessage='')
+                              .dropzone-progress
+                                .progress
+                                  .progress-bar.kt-bg-brand(role='progressbar' aria-valuemin='0' aria-valuemax='100' aria-valuenow='0' data-dz-uploadprogress='')
+                              .dropzone-toolbar
+                                span.dropzone-start
+                                  i.flaticon2-arrow
+                                span.dropzone-cancel(data-dz-remove='' style='display: none;')
+                                  i.flaticon2-cross
+                                span.dropzone-delete(data-dz-remove='')
+                                  i.flaticon2-cross
+                        span.form-text.text-muted Max file size is 1MB and max number of files is 5.
+
+                .modal-footer
+                  button.btn.btn-secondary(type='button' data-dismiss='modal' ) Close
+                  button#actionButton.btn.btn-primary(type='button' onclick="create_order()") Create
+          // end::Modal
+    #kt_scrolltop.kt-scrolltop
+      i.fa.fa-arrow-up
+    script.
+      var KTAppOptions = {
+      "colors": {
+      "state": {
+      "brand": "#5d78ff",
+      "dark": "#282a3c",
+      "light": "#ffffff",
+      "primary": "#5867dd",
+      "success": "#34bfa3",
+      "info": "#36a3f7",
+      "warning": "#ffb822",
+      "danger": "#fd3995"
+      },
+      "base": {
+      "label": [
+      "#c5cbe3",
+      "#a1a8c3",
+      "#3d4465",
+      "#3e4466"
+      ],
+      "shape": [
+      "#f0f3ff",
+      "#d9dffa",
+      "#afb4d4",
+      "#646c9a"
+      ]
+      }
+      }
+      };
+    // end::Global Config
+    // begin::Global Theme Bundle(used by all pages)
+    script(src="/assets/plugins/global/plugins.bundle.js" type="text/javascript")
+    script(src="/assets/js/scripts.bundle.js" type="text/javascript")
+    // end::Global Theme Bundle
+    // begin::Page Vendors(used by this page)
+    script(src="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript")
+    // end::Page Vendors
+    // begin::Page Scripts(used by this page)
+    script(src="/assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript")
+    //- script(src="/assets/js/pages/crud/forms/editors/summernote.js" type="text/javascript")
+    //- script(src="/assets/js/pages/crud/file-upload/dropzonejs.js" type="text/javascript")
+    script(src="/rpanel/js/client/initApprovedOrderTable.js" type="text/javascript")
+    script(src="/rpanel/js/client/initUnApprovedOrderTable.js" type="text/javascript")
+    script(src="/rpanel/js/client/initRejectedTable.js" type="text/javascript")
+    script(src="/rpanel/js/client/dashboard.js" type="text/javascript")
+    
+    
